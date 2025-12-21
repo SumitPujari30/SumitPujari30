@@ -1,5 +1,3 @@
-<!-- =================== PROFILE README =================== -->
-
 <h1 align="center">Hi 👋, I'm Sumit Pujari</h1>
 <h3 align="center">Full Stack Developer • Open Source Learner • India 🇮🇳</h3>
 
@@ -26,7 +24,6 @@
 ---
 
 ## 👨‍💻 About Me
-
 ```ts
 const sumit = {
   role: "Full Stack Developer",
@@ -35,3 +32,35 @@ const sumit = {
   interests: ["Open Source", "Cloud", "DevOps"],
   email: "sumitpujari780@gmail.com"
 };
+```
+
+- 🔭 Working on **Full Stack Development**
+- 🌱 Learning **Next.js & React Native**
+- 👯 Open to collaborate on **Open Source Projects**
+- 🤝 Looking for guidance in **Cloud & DevOps**
+- 💡 Passionate about building **clean & scalable applications**
+
+---
+
+## 🛠️ Tech Stack
+
+<img src="https://skillicons.dev/icons?i=c,cpp,java,python,javascript,html,css,react,tailwind,nodejs,express,django,mongodb,oracle,git,postman,aws" />
+
+---
+
+## 📊 GitHub Stats
+
+<p align="center">
+  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=SumitPujari30&show_icons=true&theme=tokyonight" />
+  <img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?username=SumitPujari30&theme=tokyonight" />
+</p>
+
+<p align="center">
+  <img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SumitPujari30&layout=compact&theme=tokyonight" />
+</p>
+
+> *"Code is not just written — it is engineered."*
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0ea5e9&height=120&section=footer"/>
+</p>
