@@ -1,44 +1,47 @@
 <!-- ===================== HEADER ===================== -->
-<div align="center" style="padding:40px 0; background:linear-gradient(135deg,#0f172a,#020617); border-radius:12px;">
+<div align="center" style="padding:42px 0; background:linear-gradient(135deg,#0f172a,#020617); border-radius:12px;">
 
-  <h1 style="color:#ffffff; font-size:42px; margin-bottom:10px;">
+  <h1 style="color:#ffffff; font-size:42px; margin-bottom:8px;">
     Sumit Pujari
   </h1>
 
-  <p style="color:#94a3b8; font-size:18px; max-width:700px;">
-    Full Stack Developer focused on building reliable, scalable, and maintainable web applications.
+  <p style="color:#94a3b8; font-size:17px; max-width:720px;">
+    Full Stack Developer focused on building reliable, scalable, and maintainable software systems.
   </p>
 
-  <div style="margin-top:20px;">
-    <a href="https://github.com/SumitPujari30" style="margin:0 8px; text-decoration:none;">
+  <p align="center" style="margin-top:18px;">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&pause=1200&color=38bdf8&center=true&vCenter=true&width=760&lines=Full+stack+web+development;Building+clean+frontend+interfaces;Designing+robust+backend+APIs;Learning+Next.js+and+React+Native;Exploring+cloud+and+DevOps+foundations;Writing+code+with+long-term+maintainability+in+mind" />
+  </p>
+
+  <div style="margin-top:22px;">
+    <a href="https://github.com/SumitPujari30">
       <img src="https://img.shields.io/badge/GitHub-111827?style=for-the-badge&logo=github">
     </a>
-    <a href="https://www.linkedin.com/in/sumit-pujari-9282312a1" style="margin:0 8px; text-decoration:none;">
+    <a href="https://www.linkedin.com/in/sumit-pujari-9282312a1">
       <img src="https://img.shields.io/badge/LinkedIn-0ea5e9?style=for-the-badge&logo=linkedin">
     </a>
-    <a href="https://www.instagram.com/sumitpujari_780" style="margin:0 8px; text-decoration:none;">
+    <a href="https://www.instagram.com/sumitpujari_780">
       <img src="https://img.shields.io/badge/Instagram-e11d48?style=for-the-badge&logo=instagram&logoColor=white">
     </a>
   </div>
 
-  <p style="margin-top:20px;">
-    <img src="https://komarev.com/ghpvc/?username=SumitPujari30&label=Profile%20Views&color=0ea5e9&style=flat">
+  <p style="margin-top:18px;">
+    <img src="https://komarev.com/ghpvc/?username=SumitPujari30&label=Profile%20Views&color=38bdf8&style=flat">
   </p>
 </div>
 
 ---
 
 <!-- ===================== ABOUT ===================== -->
-<section style="margin-top:40px;">
+<section style="margin-top:44px;">
 
 <h2 style="border-bottom:1px solid #1e293b; padding-bottom:8px;">
 About
 </h2>
 
 <p style="color:#cbd5f5; line-height:1.7;">
-I am a Full Stack Developer based in India with a strong interest in building real-world applications.
-I enjoy working across the stack, from clean frontend interfaces to structured backend systems.
-My current focus is on modern JavaScript frameworks, backend APIs, and cloud fundamentals.
+I am a Full Stack Developer based in India with a strong interest in solving real-world problems through software.
+I enjoy working across the stack, from frontend interfaces to backend architecture, and continuously improving code quality.
 </p>
 
 <pre style="background:#020617; padding:16px; border-radius:8px; overflow-x:auto;">
@@ -47,7 +50,7 @@ const developer = {
   name: "Sumit Pujari",
   role: "Full Stack Developer",
   location: "India",
-  currentlyLearning: ["Next.js", "React Native"],
+  currentFocus: ["Next.js", "React Native"],
   interests: ["Open Source", "Cloud", "DevOps"],
   contact: "sumitpujari780@gmail.com"
 };
@@ -55,10 +58,10 @@ const developer = {
 </pre>
 
 <ul>
-  <li>Building full stack web applications</li>
-  <li>Learning modern frontend and mobile frameworks</li>
-  <li>Designing backend APIs and services</li>
-  <li>Exploring cloud deployment and DevOps fundamentals</li>
+  <li>Developing full stack web applications</li>
+  <li>Designing maintainable frontend systems</li>
+  <li>Building scalable backend APIs</li>
+  <li>Learning cloud deployment fundamentals</li>
 </ul>
 
 </section>
@@ -66,7 +69,7 @@ const developer = {
 ---
 
 <!-- ===================== TECH STACK ===================== -->
-<section style="margin-top:40px;">
+<section style="margin-top:44px;">
 
 <h2 style="border-bottom:1px solid #1e293b; padding-bottom:8px;">
 Tech Stack
@@ -96,31 +99,8 @@ Tech Stack
 
 ---
 
-<!-- ===================== ACTIVITY ===================== -->
-<section style="margin-top:40px;">
-
-<h2 style="border-bottom:1px solid #1e293b; padding-bottom:8px;">
-Development Focus
-</h2>
-
-<ul>
-  <li>Full stack applications with authentication and authorization</li>
-  <li>Responsive UI development with modern CSS</li>
-  <li>Backend architecture and REST API design</li>
-  <li>Cloud deployment experiments and CI/CD basics</li>
-</ul>
-
-<p>
-Projects and experiments are available at:
-<a href="https://github.com/SumitPujari30">github.com/SumitPujari30</a>
-</p>
-
-</section>
-
----
-
-<!-- ===================== GITHUB STATS ===================== -->
-<section style="margin-top:40px;">
+<!-- ===================== STATS ===================== -->
+<section style="margin-top:44px;">
 
 <h2 style="border-bottom:1px solid #1e293b; padding-bottom:8px;">
 GitHub Activity
@@ -140,20 +120,20 @@ GitHub Activity
 ---
 
 <!-- ===================== SNAKE GAME ===================== -->
-<section style="margin-top:50px;">
+<section style="margin-top:48px;">
 
 <h2 style="border-bottom:1px solid #1e293b; padding-bottom:8px;">
-Contribution Activity
+Contribution Graph
 </h2>
 
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/output/github-snake-dark.svg" />
+      srcset="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/output/github-snake-dark.svg">
     <source media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/output/github-snake.svg" />
-    <img alt="GitHub contribution animation"
-      src="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/output/github-snake.svg" />
+      srcset="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/output/github-snake.svg">
+    <img alt="GitHub contribution activity visualization"
+      src="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/output/github-snake.svg">
   </picture>
 </p>
 
@@ -162,6 +142,6 @@ Contribution Activity
 ---
 
 <!-- ===================== FOOTER ===================== -->
-<div align="center" style="margin-top:50px; padding:20px; color:#94a3b8; font-size:14px;">
-  Focused on consistency, clean architecture, and long-term growth as a software engineer.
+<div align="center" style="margin-top:56px; padding:20px; color:#94a3b8; font-size:14px;">
+  Focused on consistent improvement, clean architecture, and long-term engineering growth.
 </div>
