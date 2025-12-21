@@ -1,19 +1,36 @@
 <!-- ===================== HEADER ===================== -->
-<div align="center" style="padding:42px 0; background:linear-gradient(135deg,#0f172a,#020617); border-radius:12px;">
+<div align="center" style="
+  padding:48px 0;
+  background:linear-gradient(135deg,#0f172a,#020617);
+  border-radius:14px;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif;
+">
 
-  <h1 style="color:#ffffff; font-size:42px; margin-bottom:8px;">
+  <h1 style="
+    color:#ffffff;
+    font-size:44px;
+    font-weight:600;
+    letter-spacing:-0.5px;
+    margin-bottom:6px;
+  ">
     Sumit Pujari
   </h1>
 
-  <p style="color:#94a3b8; font-size:17px; max-width:720px;">
+  <p style="
+    color:#94a3b8;
+    font-size:18px;
+    line-height:1.6;
+    max-width:760px;
+    margin:0 auto;
+  ">
     Full Stack Developer focused on building reliable, scalable, and maintainable software systems.
   </p>
 
-  <p align="center" style="margin-top:18px;">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&pause=1200&color=38bdf8&center=true&vCenter=true&width=760&lines=Full+stack+web+development;Building+clean+frontend+interfaces;Designing+robust+backend+APIs;Learning+Next.js+and+React+Native;Exploring+cloud+and+DevOps+foundations;Writing+code+with+long-term+maintainability+in+mind" />
+  <p align="center" style="margin-top:22px;">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&pause=1200&color=38bdf8&center=true&vCenter=true&width=820&lines=Full+stack+web+development;Clean+frontend+architecture;Scalable+backend+APIs;Learning+Next.js+and+React+Native;Exploring+cloud+and+DevOps;Writing+code+with+long-term+maintainability+in+mind" />
   </p>
 
-  <div style="margin-top:22px;">
+  <div style="margin-top:26px;">
     <a href="https://github.com/SumitPujari30">
       <img src="https://img.shields.io/badge/GitHub-111827?style=for-the-badge&logo=github">
     </a>
@@ -25,7 +42,7 @@
     </a>
   </div>
 
-  <p style="margin-top:18px;">
+  <p style="margin-top:20px;">
     <img src="https://komarev.com/ghpvc/?username=SumitPujari30&label=Profile%20Views&color=38bdf8&style=flat">
   </p>
 </div>
@@ -33,18 +50,41 @@
 ---
 
 <!-- ===================== ABOUT ===================== -->
-<section style="margin-top:44px;">
+<section style="
+  margin-top:52px;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif;
+">
 
-<h2 style="border-bottom:1px solid #1e293b; padding-bottom:8px;">
+<h2 style="
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:-0.3px;
+  border-bottom:1px solid #1e293b;
+  padding-bottom:10px;
+">
 About
 </h2>
 
-<p style="color:#cbd5f5; line-height:1.7;">
+<p style="
+  color:#cbd5f5;
+  font-size:16px;
+  line-height:1.75;
+  max-width:900px;
+">
 I am a Full Stack Developer based in India with a strong interest in solving real-world problems through software.
-I enjoy working across the stack, from frontend interfaces to backend architecture, and continuously improving code quality.
+I enjoy working across the stack, from frontend interfaces to backend architecture, while continuously improving
+code quality, readability, and long-term maintainability.
 </p>
 
-<pre style="background:#020617; padding:16px; border-radius:8px; overflow-x:auto;">
+<pre style="
+  background:#020617;
+  padding:18px;
+  border-radius:10px;
+  overflow-x:auto;
+  font-family:'JetBrains Mono','Fira Code',monospace;
+  font-size:14px;
+  line-height:1.6;
+">
 <code>
 const developer = {
   name: "Sumit Pujari",
@@ -57,7 +97,7 @@ const developer = {
 </code>
 </pre>
 
-<ul>
+<ul style="line-height:1.8; font-size:15px;">
   <li>Developing full stack web applications</li>
   <li>Designing maintainable frontend systems</li>
   <li>Building scalable backend APIs</li>
@@ -69,28 +109,34 @@ const developer = {
 ---
 
 <!-- ===================== TECH STACK ===================== -->
-<section style="margin-top:44px;">
+<section style="margin-top:52px;">
 
-<h2 style="border-bottom:1px solid #1e293b; padding-bottom:8px;">
+<h2 style="
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:-0.3px;
+  border-bottom:1px solid #1e293b;
+  padding-bottom:10px;
+">
 Tech Stack
 </h2>
 
-<h4>Languages</h4>
+<h4 style="margin-top:18px; font-weight:600;">Languages</h4>
 <p>
   <img src="https://skillicons.dev/icons?i=c,cpp,java,python,javascript">
 </p>
 
-<h4>Frontend</h4>
+<h4 style="margin-top:18px; font-weight:600;">Frontend</h4>
 <p>
   <img src="https://skillicons.dev/icons?i=html,css,react,tailwind">
 </p>
 
-<h4>Backend & Databases</h4>
+<h4 style="margin-top:18px; font-weight:600;">Backend & Databases</h4>
 <p>
   <img src="https://skillicons.dev/icons?i=nodejs,express,django,mongodb,oracle">
 </p>
 
-<h4>Tools & Cloud</h4>
+<h4 style="margin-top:18px; font-weight:600;">Tools & Cloud</h4>
 <p>
   <img src="https://skillicons.dev/icons?i=git,postman,aws">
 </p>
@@ -100,9 +146,15 @@ Tech Stack
 ---
 
 <!-- ===================== STATS ===================== -->
-<section style="margin-top:44px;">
+<section style="margin-top:52px;">
 
-<h2 style="border-bottom:1px solid #1e293b; padding-bottom:8px;">
+<h2 style="
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:-0.3px;
+  border-bottom:1px solid #1e293b;
+  padding-bottom:10px;
+">
 GitHub Activity
 </h2>
 
@@ -119,10 +171,16 @@ GitHub Activity
 
 ---
 
-<!-- ===================== SNAKE GAME ===================== -->
-<section style="margin-top:48px;">
+<!-- ===================== SNAKE ===================== -->
+<section style="margin-top:56px;">
 
-<h2 style="border-bottom:1px solid #1e293b; padding-bottom:8px;">
+<h2 style="
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:-0.3px;
+  border-bottom:1px solid #1e293b;
+  padding-bottom:10px;
+">
 Contribution Graph
 </h2>
 
@@ -132,7 +190,7 @@ Contribution Graph
       srcset="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/output/github-snake-dark.svg">
     <source media="(prefers-color-scheme: light)"
       srcset="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/output/github-snake.svg">
-    <img alt="GitHub contribution activity visualization"
+    <img alt="GitHub contribution activity"
       src="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/output/github-snake.svg">
   </picture>
 </p>
@@ -142,6 +200,12 @@ Contribution Graph
 ---
 
 <!-- ===================== FOOTER ===================== -->
-<div align="center" style="margin-top:56px; padding:20px; color:#94a3b8; font-size:14px;">
-  Focused on consistent improvement, clean architecture, and long-term engineering growth.
+<div align="center" style="
+  margin-top:64px;
+  padding:22px;
+  color:#94a3b8;
+  font-size:14px;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif;
+">
+  Focused on consistency, clean architecture, and long-term engineering growth.
 </div>
