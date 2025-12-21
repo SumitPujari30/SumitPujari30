@@ -24,13 +24,14 @@
 ---
 
 ## 👨‍💻 About Me
+
 ```ts
 const sumit = {
   role: "Full Stack Developer",
   location: "India 🇮🇳",
   currentlyLearning: ["Next.js", "React Native"],
   interests: ["Open Source", "Cloud", "DevOps"],
-  email: "sumitpujari780@gmail.com"
+  email: "sumitpujari780@gmail.com",
 };
 ```
 
@@ -44,7 +45,9 @@ const sumit = {
 
 ## 🛠️ Tech Stack
 
-<img src="https://skillicons.dev/icons?i=c,cpp,java,python,javascript,html,css,react,tailwind,nodejs,express,django,mongodb,oracle,git,postman,aws" />
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=c,cpp,java,python,javascript,html,css,react,tailwind,nodejs,express,django,mongodb,oracle,git,postman,aws" />
+</p>
 
 ---
 
@@ -58,6 +61,8 @@ const sumit = {
 <p align="center">
   <img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SumitPujari30&layout=compact&theme=tokyonight" />
 </p>
+
+---
 
 > *"Code is not just written — it is engineered."*
 
