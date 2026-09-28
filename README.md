@@ -1,41 +1,17 @@
 <!-- ===================== HEADER ===================== -->
-<div align="center" style="
-  padding:48px 0;
-  background:linear-gradient(135deg,#0f172a,#020617);
-  border-radius:14px;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif;
-">
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0f172a&height=250&section=header&text=Sumit%20Pujari&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer&descAlignY=55&descAlign=50" width="100%" />
 
-  <h1 style="
-    color:#ffffff;
-    font-size:44px;
-    font-weight:600;
-    letter-spacing:-0.5px;
-    margin-bottom:6px;
-  ">
-    Sumit Pujari
-  </h1>
-
-  <p style="
-    color:#94a3b8;
-    font-size:18px;
-    line-height:1.6;
-    max-width:760px;
-    margin:0 auto;
-  ">
-    Full Stack Developer focused on building reliable, scalable, and maintainable software systems.
-  </p>
-
-  <p align="center" style="margin-top:22px;">
+  <p style="margin-top:22px;">
     <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&pause=1200&color=38bdf8&center=true&vCenter=true&width=820&lines=Full+stack+web+development;Clean+frontend+architecture;Scalable+backend+APIs;Learning+Next.js+and+React+Native;Exploring+cloud+and+DevOps;Writing+code+with+long-term+maintainability+in+mind" />
   </p>
 
   <div style="margin-top:26px;">
     <a href="https://github.com/SumitPujari30">
-      <img src="https://img.shields.io/badge/GitHub-111827?style=for-the-badge&logo=github">
+      <img src="https://img.shields.io/badge/GitHub-111827?style=for-the-badge&logo=github&logoColor=white">
     </a>
     <a href="https://www.linkedin.com/in/sumit-pujari-9282312a1">
-      <img src="https://img.shields.io/badge/LinkedIn-0ea5e9?style=for-the-badge&logo=linkedin">
+      <img src="https://img.shields.io/badge/LinkedIn-0ea5e9?style=for-the-badge&logo=linkedin&logoColor=white">
     </a>
     <a href="https://www.instagram.com/sumitpujari_780">
       <img src="https://img.shields.io/badge/Instagram-e11d48?style=for-the-badge&logo=instagram&logoColor=white">
@@ -49,114 +25,95 @@
 
 ---
 
+<!-- ===================== TERMINAL PROFILE ===================== -->
+<div align="center">
+  <h3><code>SumitPujari30@github ~ $ ./contributions.sh</code></h3>
+  <img src="./contrib-heatmap.svg" width="860" />
+  <br><br>
+  <h3><code>SumitPujari30@github ~ $ whoami</code></h3>
+  <img src="./avi-ascii.svg" width="450" />
+</div>
+
+---
+
 <!-- ===================== ABOUT ===================== -->
-<section style="
-  margin-top:52px;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif;
-">
+<div align="center">
+  <h2>🚀 About Me</h2>
+</div>
 
-<h2 style="
-  font-size:24px;
-  font-weight:600;
-  letter-spacing:-0.3px;
-  border-bottom:1px solid #1e293b;
-  padding-bottom:10px;
-">
-About
-</h2>
-
-<p style="
-  color:#cbd5f5;
-  font-size:16px;
-  line-height:1.75;
-  max-width:900px;
-">
-I am a Full Stack Developer based in India with a strong interest in solving real-world problems through software.
-I enjoy working across the stack, from frontend interfaces to backend architecture, while continuously improving
-code quality, readability, and long-term maintainability.
+<p align="center" style="color:#cbd5f5; font-size:16px; line-height:1.75; max-width:900px; margin: 0 auto;">
+I am a Full Stack Developer based in India with a strong interest in solving real-world problems through software. I enjoy working across the stack, from frontend interfaces to backend architecture, while continuously improving code quality, readability, and long-term maintainability.
 </p>
 
-<pre style="
-  background:#020617;
-  padding:18px;
-  border-radius:10px;
-  overflow-x:auto;
-  font-family:'JetBrains Mono','Fira Code',monospace;
-  font-size:14px;
-  line-height:1.6;
-">
-<code>
-const developer = {
-  name: "Sumit Pujari",
-  role: "Full Stack Developer",
-  location: "India",
-  currentFocus: ["Next.js", "React Native"],
-  interests: ["Open Source", "Cloud", "DevOps"],
-  contact: "sumitpujari780@gmail.com"
+<br>
+
+<div align="center">
+  <pre style="background:#0d1117; padding:20px; border-radius:10px; border:1px solid #30363d; overflow-x:auto; font-family:'JetBrains Mono','Fira Code',monospace; font-size:14px; line-height:1.6; max-width: 600px; text-align: left;">
+<code><span style="color:#ff7b72;">const</span> <span style="color:#79c0ff;">developer</span> <span style="color:#ff7b72;">=</span> {
+  <span style="color:#a5d6ff;">name</span>: <span style="color:#a5d6ff;">"Sumit Pujari"</span>,
+  <span style="color:#a5d6ff;">role</span>: <span style="color:#a5d6ff;">"Full Stack Developer"</span>,
+  <span style="color:#a5d6ff;">location</span>: <span style="color:#a5d6ff;">"India"</span>,
+  <span style="color:#a5d6ff;">currentFocus</span>: [<span style="color:#a5d6ff;">"Next.js"</span>, <span style="color:#a5d6ff;">"React Native"</span>],
+  <span style="color:#a5d6ff;">interests</span>: [<span style="color:#a5d6ff;">"Open Source"</span>, <span style="color:#a5d6ff;">"Cloud"</span>, <span style="color:#a5d6ff;">"DevOps"</span>],
+  <span style="color:#a5d6ff;">contact</span>: <span style="color:#a5d6ff;">"sumitpujari780@gmail.com"</span>
 };
-</code>
-</pre>
-
-<ul style="line-height:1.8; font-size:15px;">
-  <li>Developing full stack web applications</li>
-  <li>Designing maintainable frontend systems</li>
-  <li>Building scalable backend APIs</li>
-  <li>Learning cloud deployment fundamentals</li>
-</ul>
-
-</section>
+</code></pre>
+</div>
 
 ---
 
 <!-- ===================== TECH STACK ===================== -->
-<section style="margin-top:52px;">
+<div align="center">
+  <h2>💻 Tech Stack</h2>
+</div>
 
-<h2 style="
-  font-size:24px;
-  font-weight:600;
-  letter-spacing:-0.3px;
-  border-bottom:1px solid #1e293b;
-  padding-bottom:10px;
-">
-Tech Stack
-</h2>
+<div align="center">
+  <table style="border: none;">
+    <tr style="background: transparent; border: none;">
+      <td align="center" style="border: none; padding: 20px;">
+        <h4 style="margin-top:0; font-weight:600;">Languages</h4>
+        <img src="https://skillicons.dev/icons?i=c,cpp,java,python,javascript" />
+      </td>
+      <td align="center" style="border: none; padding: 20px;">
+        <h4 style="margin-top:0; font-weight:600;">Frontend</h4>
+        <img src="https://skillicons.dev/icons?i=html,css,react,tailwind" />
+      </td>
+    </tr>
+    <tr style="background: transparent; border: none;">
+      <td align="center" style="border: none; padding: 20px;">
+        <h4 style="margin-top:0; font-weight:600;">Backend & DBs</h4>
+        <img src="https://skillicons.dev/icons?i=nodejs,express,django,mongodb,oracle" />
+      </td>
+      <td align="center" style="border: none; padding: 20px;">
+        <h4 style="margin-top:0; font-weight:600;">Tools & Cloud</h4>
+        <img src="https://skillicons.dev/icons?i=git,postman,aws,docker" />
+      </td>
+    </tr>
+  </table>
+</div>
 
-<h4 style="margin-top:18px; font-weight:600;">Languages</h4>
-<p>
-  <img src="https://skillicons.dev/icons?i=c,cpp,java,python,javascript">
+---
+
+<!-- ===================== DEV SUMMARY ===================== -->
+<div align="center">
+  <h2>📦 Dev Summary</h2>
+</div>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/profile-summary-card-output/tokyonight/0-profile-details.svg" alt="Profile Details" width="100%">
 </p>
 
-<h4 style="margin-top:18px; font-weight:600;">Frontend</h4>
-<p>
-  <img src="https://skillicons.dev/icons?i=html,css,react,tailwind">
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/profile-summary-card-output/tokyonight/1-repo-languages.svg" alt="Top Languages by Repo" width="49%">
+  <img src="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/profile-summary-card-output/tokyonight/2-commit-languages.svg" alt="Top Languages by Commit" width="49%">
 </p>
-
-<h4 style="margin-top:18px; font-weight:600;">Backend & Databases</h4>
-<p>
-  <img src="https://skillicons.dev/icons?i=nodejs,express,django,mongodb,oracle">
-</p>
-
-<h4 style="margin-top:18px; font-weight:600;">Tools & Cloud</h4>
-<p>
-  <img src="https://skillicons.dev/icons?i=git,postman,aws">
-</p>
-
-</section>
 
 ---
 
 <!-- ===================== STATS ===================== -->
-<section style="margin-top:52px;">
-
-<h2 style="
-  font-size:24px;
-  font-weight:600;
-  letter-spacing:-0.3px;
-  border-bottom:1px solid #1e293b;
-  padding-bottom:10px;
-">
-GitHub Activity
-</h2>
+<div align="center">
+  <h2>📊 GitHub Activity</h2>
+</div>
 
 <p align="center">
   <img width="48%" src="https://github-readme-stats.vercel.app/api?username=SumitPujari30&show_icons=true&theme=tokyonight">
@@ -167,22 +124,12 @@ GitHub Activity
   <img width="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=SumitPujari30&layout=compact&theme=tokyonight">
 </p>
 
-</section>
-
 ---
 
 <!-- ===================== SNAKE ===================== -->
-<section style="margin-top:56px;">
-
-<h2 style="
-  font-size:24px;
-  font-weight:600;
-  letter-spacing:-0.3px;
-  border-bottom:1px solid #1e293b;
-  padding-bottom:10px;
-">
-Contribution Graph
-</h2>
+<div align="center">
+  <h2>🔥 Contribution Snake</h2>
+</div>
 
 <p align="center">
   <picture>
@@ -195,17 +142,10 @@ Contribution Graph
   </picture>
 </p>
 
-</section>
-
 ---
 
 <!-- ===================== FOOTER ===================== -->
-<div align="center" style="
-  margin-top:64px;
-  padding:22px;
-  color:#94a3b8;
-  font-size:14px;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif;
-">
-  Focused on consistency, clean architecture, and long-term engineering growth.
+<div align="center" style="margin-top:40px; padding:22px; color:#94a3b8; font-size:14px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif;">
+  Focused on consistency, clean architecture, and long-term engineering growth. <br>
+  <i>"Code is read much more often than it is written."</i>
 </div>
