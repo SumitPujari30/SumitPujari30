@@ -12,44 +12,56 @@ req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
 satisfy_woff2 = urllib.request.urlopen(req).read()
 satisfy_b64 = base64.b64encode(satisfy_woff2).decode('utf-8')
 
-WIDTH = 580
-HEIGHT = 160
-CX = WIDTH // 2  # 290
-CY = 78
+WIDTH = 600
+HEIGHT = 165
+CX = WIDTH // 2  # 300
+CY = 80
 
-# Left Chevron geometry: apex at (95, CY), expands to x=155
-# Outer: (95, CY) to (142, CY - 46) and (142, CY + 46)
-# Inner: (113, CY) to (160, CY - 46) and (160, CY + 46)
-slope = 46.0 / 47.0  # ~0.978
+# Chevrons flanking the name
+# Left Chevron: apex at (75, CY), expands to x=135
+slope = 46.0 / 46.0  # 1.0
 left_lines = []
-for x in range(95, 161, 4):
-    y_outer_top = CY - (x - 95) * slope if x <= 142 else CY - 46
-    y_outer_bot = CY + (x - 95) * slope if x <= 142 else CY + 46
-    if x < 113:
+for x in range(75, 140, 4):
+    y_outer_top = CY - (x - 75) * slope if x <= 121 else CY - 46
+    y_outer_bot = CY + (x - 75) * slope if x <= 121 else CY + 46
+    if x < 94:
         left_lines.append((x, y_outer_top, y_outer_bot))
     else:
-        y_inner_top = CY - (x - 113) * slope
-        y_inner_bot = CY + (x - 113) * slope
+        y_inner_top = CY - (x - 94) * slope
+        y_inner_bot = CY + (x - 94) * slope
         left_lines.append((x, y_outer_top, y_inner_top))
         left_lines.append((x, y_inner_bot, y_outer_bot))
 
-# Right Chevron: symmetrically mirrored across CX = 290
+# Right Chevron: symmetrically mirrored across CX = 300
 right_lines = []
 for (lx, ly1, ly2) in left_lines:
     rx = WIDTH - lx
     right_lines.append((rx, ly1, ly2))
 
-# Binary columns across background
-random.seed(2026)
-col_xs = [25, 52, 78, 105, 132, 160, 185, 395, 420, 448, 475, 502, 528, 555]
-binary_cols = []
-for cx in col_xs:
-    bits = []
-    for row in range(8):
+# Binary Matrix covering the FULL SECTION
+random.seed(42)
+col_xs = list(range(14, WIDTH - 6, 20))  # 29 columns from x=14 to x=574
+row_ys = list(range(16, HEIGHT, 15))    # 10 rows from y=16 to y=151
+
+matrix_cols = []
+for c_idx, cx in enumerate(col_xs):
+    col_bits = []
+    for r_idx, by in enumerate(row_ys):
         val = str(random.choice([0, 1]))
-        is_highlight = random.random() < 0.12
-        bits.append((val, is_highlight))
-    binary_cols.append((cx, bits))
+        # Is this directly behind the center name text?
+        in_center_text = (CX - 150 <= cx <= CX + 150) and (48 <= by <= 120)
+        is_highlight = (not in_center_text) and (random.random() < 0.14)
+        if in_center_text:
+            opacity = 0.05 + random.random() * 0.04
+            color = "#0284c7"
+        elif is_highlight:
+            opacity = 0.55 + random.random() * 0.25
+            color = "#67e8f9"
+        else:
+            opacity = 0.10 + random.random() * 0.18
+            color = "#38bdf8"
+        col_bits.append((by, val, opacity, color, is_highlight))
+    matrix_cols.append((cx, col_bits))
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" width="100%" style="background: transparent;">
   <defs>
@@ -61,7 +73,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}"
         font-style: normal;
       }}
 
-      /* Refined, crisp neon glow without heavy hazy cloud */
+      /* Refined, clean neon glow */
       @keyframes neonSubtle {{
         0%, 100% {{
           filter: drop-shadow(0 0 2px #38bdf8) drop-shadow(0 0 5px rgba(14, 165, 233, 0.45));
@@ -74,24 +86,24 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}"
       }}
 
       @keyframes bitPulse {{
-        0%, 100% {{ opacity: 0.12; }}
-        50% {{ opacity: 0.35; }}
+        0%, 100% {{ opacity: 0.25; }}
+        50% {{ opacity: 0.85; }}
       }}
 
       @keyframes chevronShimmer {{
         0%, 100% {{
           opacity: 0.85;
-          filter: drop-shadow(0 0 3px rgba(56, 189, 248, 0.4));
+          filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.4));
         }}
         50% {{
           opacity: 1;
-          filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.75));
+          filter: drop-shadow(0 0 7px rgba(56, 189, 248, 0.8));
         }}
       }}
 
       .neon-title {{
         font-family: 'SatisfyNeon', 'Segoe Script', 'Brush Script MT', cursive;
-        font-size: 50px;
+        font-size: 52px;
         fill: #ffffff;
         text-anchor: middle;
         animation: neonSubtle 3.5s ease-in-out infinite;
@@ -109,9 +121,8 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}"
 
       .bit-text {{
         font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-        font-size: 11px;
-        fill: #38bdf8;
-        letter-spacing: 2px;
+        font-size: 11.5px;
+        letter-spacing: 1px;
       }}
 
       .chevrons {{
@@ -119,17 +130,10 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}"
       }}
     </style>
 
-    <!-- Linear gradient for chevrons -->
-    <linearGradient id="chevGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.9" />
-      <stop offset="50%" stop-color="#38bdf8" stop-opacity="1" />
-      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.85" />
-    </linearGradient>
-
-    <!-- Subtle, gentle center illumination (no heavy fog) -->
-    <radialGradient id="centerGlow" cx="50%" cy="48%" r="45%">
-      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.10" />
-      <stop offset="60%" stop-color="#0369a1" stop-opacity="0.03" />
+    <!-- Subtle, gentle center bloom -->
+    <radialGradient id="centerGlow" cx="50%" cy="48%" r="48%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.12" />
+      <stop offset="65%" stop-color="#0369a1" stop-opacity="0.03" />
       <stop offset="100%" stop-color="#0d1117" stop-opacity="0" />
     </radialGradient>
   </defs>
@@ -137,54 +141,47 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}"
   <!-- Ambient Backdrop -->
   <rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" rx="14" fill="url(#centerGlow)" />
 
-  <!-- Binary Matrix Rain Columns -->
+  <!-- Binary Matrix Rain Columns (Covering Entire Section) -->
   <g class="bit-text">
 '''
 
-for idx, (cx, bits) in enumerate(binary_cols):
-    delay = (idx * 0.28) % 2.4
-    dur = 2.4 + (idx % 3) * 0.5
+for idx, (cx, bits) in enumerate(matrix_cols):
+    delay = (idx * 0.17) % 2.5
+    dur = 2.0 + (idx % 4) * 0.5
     svg += f'    <g style="animation: bitPulse {dur:.2f}s ease-in-out infinite; animation-delay: {delay:.2f}s;">\n'
-    for b_idx, (bit, is_hi) in enumerate(bits):
-        by = 22 + b_idx * 16
-        if is_hi:
-            fill_color = "#67e8f9"
-            opacity = 0.45
-        else:
-            fill_color = "#38bdf8"
-            opacity = 0.07 + ((b_idx * 2 + idx) % 5) * 0.03
-        svg += f'      <text x="{cx}" y="{by}" fill="{fill_color}" opacity="{opacity:.2f}">{bit}</text>\n'
+    for (by, bit, op, col, is_hi) in bits:
+        svg += f'      <text x="{cx}" y="{by}" fill="{col}" opacity="{op:.2f}">{bit}</text>\n'
     svg += '    </g>\n'
 
 svg += '''  </g>
 
-  <!-- Left Striped Chevron (Right beside name) -->
+  <!-- Left Striped Chevron (Direct high-contrast colors) -->
   <g class="chevrons">
 '''
 
 for (lx, ly1, ly2) in left_lines:
-    svg += f'    <line x1="{lx}" y1="{ly1:.1f}" x2="{lx}" y2="{ly2:.1f}" stroke="url(#chevGrad)" stroke-width="2.2" stroke-linecap="round" />\n'
+    svg += f'    <line x1="{lx}" y1="{ly1:.1f}" x2="{lx}" y2="{ly2:.1f}" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />\n'
 
 svg += '''  </g>
 
-  <!-- Right Striped Chevron (Right beside name) -->
+  <!-- Right Striped Chevron (Direct high-contrast colors) -->
   <g class="chevrons">
 '''
 
 for (rx, ry1, ry2) in right_lines:
-    svg += f'    <line x1="{rx}" y1="{ry1:.1f}" x2="{rx}" y2="{ry2:.1f}" stroke="url(#chevGrad)" stroke-width="2.2" stroke-linecap="round" />\n'
+    svg += f'    <line x1="{rx}" y1="{ry1:.1f}" x2="{rx}" y2="{ry2:.1f}" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />\n'
 
 svg += f'''  </g>
 
   <!-- Center Content: Crisp Name & Status Badge -->
   <g>
     <!-- Crisp Neon Name -->
-    <text x="{CX}" y="82" class="neon-title">Sumit Pujari</text>
+    <text x="{CX}" y="84" class="neon-title">Sumit Pujari</text>
 
     <!-- Role Tech Tag -->
-    <g transform="translate({CX - 138}, 104)">
+    <g transform="translate({CX - 138}, 107)">
       <!-- Pill base -->
-      <rect x="0" y="0" width="276" height="24" rx="12" fill="#0b1120" fill-opacity="0.85" stroke="#1e293b" stroke-width="1.2" />
+      <rect x="0" y="0" width="276" height="24" rx="12" fill="#0b1120" fill-opacity="0.88" stroke="#1e293b" stroke-width="1.2" />
       <rect x="1" y="1" width="274" height="22" rx="11" fill="none" stroke="#38bdf8" stroke-width="0.8" stroke-opacity="0.4" />
 
       <!-- Pulsing live status beacon -->
@@ -206,4 +203,4 @@ svg += f'''  </g>
 with open(OUT, "w", encoding="utf-8") as f:
     f.write(svg)
 
-print(f"Generated {OUT} successfully! Size: {len(svg)} bytes")
+print(f"Generated {OUT} successfully! Size: {len(svg)} bytes, cols: {len(matrix_cols)}, rows: {len(row_ys)}")
