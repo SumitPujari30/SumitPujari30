@@ -20,20 +20,16 @@
         }
       }
 
-      @keyframes bitPulse {
-        0%, 100% { opacity: 0.25; }
-        50% { opacity: 0.85; }
+      /* Balanced, gentle pulse for binary numbers */
+      @keyframes bitPulseSubtle {
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 1.0; }
       }
 
-      @keyframes chevronShimmer {
-        0%, 100% {
-          opacity: 0.85;
-          filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.4));
-        }
-        50% {
-          opacity: 1;
-          filter: drop-shadow(0 0 7px rgba(56, 189, 248, 0.8));
-        }
+      /* Pure opacity animation - NO CSS filter drop-shadow so Chrome/Blink renders all lines reliably */
+      @keyframes chevronPulse {
+        0%, 100% { opacity: 0.85; }
+        50% { opacity: 1.0; }
       }
 
       .neon-title {
@@ -56,14 +52,21 @@
 
       .bit-text {
         font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-        font-size: 11.5px;
+        font-size: 11px;
         letter-spacing: 1px;
       }
 
       .chevrons {
-        animation: chevronShimmer 3s ease-in-out infinite;
+        animation: chevronPulse 2.5s ease-in-out infinite;
       }
     </style>
+
+    <!-- Linear gradient for chevrons -->
+    <linearGradient id="chevGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
 
     <!-- Subtle, gentle center bloom -->
     <radialGradient id="centerGlow" cx="50%" cy="48%" r="48%">
@@ -76,422 +79,422 @@
   <!-- Ambient Backdrop -->
   <rect x="0" y="0" width="600" height="165" rx="14" fill="url(#centerGlow)" />
 
-  <!-- Binary Matrix Rain Columns (Covering Entire Section) -->
+  <!-- Binary Matrix Rain Columns (Subtle / Low Visibility) -->
   <g class="bit-text">
-    <g style="animation: bitPulse 2.00s ease-in-out infinite; animation-delay: 0.00s;">
-      <text x="14" y="16" fill="#67e8f9" opacity="0.62">0</text>
-      <text x="14" y="31" fill="#67e8f9" opacity="0.58">0</text>
-      <text x="14" y="46" fill="#38bdf8" opacity="0.11">0</text>
-      <text x="14" y="61" fill="#38bdf8" opacity="0.19">0</text>
-      <text x="14" y="76" fill="#38bdf8" opacity="0.23">0</text>
-      <text x="14" y="91" fill="#38bdf8" opacity="0.21">1</text>
-      <text x="14" y="106" fill="#38bdf8" opacity="0.13">0</text>
-      <text x="14" y="121" fill="#38bdf8" opacity="0.13">1</text>
-      <text x="14" y="136" fill="#67e8f9" opacity="0.64">1</text>
-      <text x="14" y="151" fill="#38bdf8" opacity="0.21">1</text>
+    <g style="animation: bitPulseSubtle 2.40s ease-in-out infinite; animation-delay: 0.00s;">
+      <text x="14" y="16" fill="#67e8f9" opacity="0.59">0</text>
+      <text x="14" y="31" fill="#38bdf8" opacity="0.23">0</text>
+      <text x="14" y="46" fill="#38bdf8" opacity="0.22">0</text>
+      <text x="14" y="61" fill="#38bdf8" opacity="0.28">0</text>
+      <text x="14" y="76" fill="#38bdf8" opacity="0.31">0</text>
+      <text x="14" y="91" fill="#38bdf8" opacity="0.29">1</text>
+      <text x="14" y="106" fill="#38bdf8" opacity="0.24">0</text>
+      <text x="14" y="121" fill="#38bdf8" opacity="0.24">1</text>
+      <text x="14" y="136" fill="#67e8f9" opacity="0.61">1</text>
+      <text x="14" y="151" fill="#38bdf8" opacity="0.29">1</text>
     </g>
-    <g style="animation: bitPulse 2.50s ease-in-out infinite; animation-delay: 0.17s;">
-      <text x="34" y="16" fill="#38bdf8" opacity="0.20">0</text>
-      <text x="34" y="31" fill="#67e8f9" opacity="0.62">1</text>
-      <text x="34" y="46" fill="#38bdf8" opacity="0.23">1</text>
-      <text x="34" y="61" fill="#38bdf8" opacity="0.24">0</text>
-      <text x="34" y="76" fill="#38bdf8" opacity="0.26">0</text>
-      <text x="34" y="91" fill="#38bdf8" opacity="0.21">1</text>
-      <text x="34" y="106" fill="#38bdf8" opacity="0.16">1</text>
-      <text x="34" y="121" fill="#38bdf8" opacity="0.22">1</text>
-      <text x="34" y="136" fill="#38bdf8" opacity="0.13">0</text>
-      <text x="34" y="151" fill="#38bdf8" opacity="0.17">0</text>
+    <g style="animation: bitPulseSubtle 2.90s ease-in-out infinite; animation-delay: 0.17s;">
+      <text x="34" y="16" fill="#38bdf8" opacity="0.28">0</text>
+      <text x="34" y="31" fill="#67e8f9" opacity="0.59">1</text>
+      <text x="34" y="46" fill="#38bdf8" opacity="0.30">1</text>
+      <text x="34" y="61" fill="#38bdf8" opacity="0.31">0</text>
+      <text x="34" y="76" fill="#38bdf8" opacity="0.32">0</text>
+      <text x="34" y="91" fill="#38bdf8" opacity="0.30">1</text>
+      <text x="34" y="106" fill="#38bdf8" opacity="0.26">1</text>
+      <text x="34" y="121" fill="#38bdf8" opacity="0.30">1</text>
+      <text x="34" y="136" fill="#38bdf8" opacity="0.24">0</text>
+      <text x="34" y="151" fill="#38bdf8" opacity="0.27">0</text>
     </g>
-    <g style="animation: bitPulse 3.00s ease-in-out infinite; animation-delay: 0.34s;">
-      <text x="54" y="16" fill="#38bdf8" opacity="0.25">0</text>
-      <text x="54" y="31" fill="#38bdf8" opacity="0.11">0</text>
-      <text x="54" y="46" fill="#38bdf8" opacity="0.11">1</text>
-      <text x="54" y="61" fill="#38bdf8" opacity="0.19">1</text>
-      <text x="54" y="76" fill="#38bdf8" opacity="0.13">1</text>
-      <text x="54" y="91" fill="#38bdf8" opacity="0.18">1</text>
-      <text x="54" y="106" fill="#38bdf8" opacity="0.28">1</text>
-      <text x="54" y="121" fill="#38bdf8" opacity="0.12">0</text>
-      <text x="54" y="136" fill="#38bdf8" opacity="0.13">0</text>
-      <text x="54" y="151" fill="#38bdf8" opacity="0.18">0</text>
+    <g style="animation: bitPulseSubtle 3.40s ease-in-out infinite; animation-delay: 0.34s;">
+      <text x="54" y="16" fill="#38bdf8" opacity="0.32">0</text>
+      <text x="54" y="31" fill="#38bdf8" opacity="0.22">0</text>
+      <text x="54" y="46" fill="#38bdf8" opacity="0.23">1</text>
+      <text x="54" y="61" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="54" y="76" fill="#38bdf8" opacity="0.24">1</text>
+      <text x="54" y="91" fill="#38bdf8" opacity="0.27">1</text>
+      <text x="54" y="106" fill="#38bdf8" opacity="0.34">1</text>
+      <text x="54" y="121" fill="#38bdf8" opacity="0.23">0</text>
+      <text x="54" y="136" fill="#38bdf8" opacity="0.24">0</text>
+      <text x="54" y="151" fill="#38bdf8" opacity="0.27">0</text>
     </g>
-    <g style="animation: bitPulse 3.50s ease-in-out infinite; animation-delay: 0.51s;">
-      <text x="74" y="16" fill="#38bdf8" opacity="0.21">0</text>
-      <text x="74" y="31" fill="#38bdf8" opacity="0.27">1</text>
-      <text x="74" y="46" fill="#38bdf8" opacity="0.12">0</text>
-      <text x="74" y="61" fill="#38bdf8" opacity="0.16">1</text>
-      <text x="74" y="76" fill="#38bdf8" opacity="0.18">1</text>
-      <text x="74" y="91" fill="#38bdf8" opacity="0.24">1</text>
-      <text x="74" y="106" fill="#38bdf8" opacity="0.15">0</text>
-      <text x="74" y="121" fill="#38bdf8" opacity="0.24">0</text>
-      <text x="74" y="136" fill="#38bdf8" opacity="0.19">0</text>
-      <text x="74" y="151" fill="#38bdf8" opacity="0.26">0</text>
+    <g style="animation: bitPulseSubtle 3.90s ease-in-out infinite; animation-delay: 0.51s;">
+      <text x="74" y="16" fill="#38bdf8" opacity="0.29">0</text>
+      <text x="74" y="31" fill="#38bdf8" opacity="0.34">1</text>
+      <text x="74" y="46" fill="#38bdf8" opacity="0.23">0</text>
+      <text x="74" y="61" fill="#38bdf8" opacity="0.26">1</text>
+      <text x="74" y="76" fill="#38bdf8" opacity="0.27">1</text>
+      <text x="74" y="91" fill="#38bdf8" opacity="0.31">1</text>
+      <text x="74" y="106" fill="#38bdf8" opacity="0.26">0</text>
+      <text x="74" y="121" fill="#38bdf8" opacity="0.31">0</text>
+      <text x="74" y="136" fill="#38bdf8" opacity="0.28">0</text>
+      <text x="74" y="151" fill="#38bdf8" opacity="0.33">0</text>
     </g>
-    <g style="animation: bitPulse 2.00s ease-in-out infinite; animation-delay: 0.68s;">
-      <text x="94" y="16" fill="#38bdf8" opacity="0.14">1</text>
-      <text x="94" y="31" fill="#67e8f9" opacity="0.67">0</text>
-      <text x="94" y="46" fill="#38bdf8" opacity="0.20">0</text>
-      <text x="94" y="61" fill="#67e8f9" opacity="0.67">0</text>
-      <text x="94" y="76" fill="#38bdf8" opacity="0.26">0</text>
-      <text x="94" y="91" fill="#38bdf8" opacity="0.27">1</text>
-      <text x="94" y="106" fill="#38bdf8" opacity="0.17">0</text>
-      <text x="94" y="121" fill="#38bdf8" opacity="0.19">1</text>
-      <text x="94" y="136" fill="#38bdf8" opacity="0.11">0</text>
-      <text x="94" y="151" fill="#38bdf8" opacity="0.14">0</text>
+    <g style="animation: bitPulseSubtle 2.40s ease-in-out infinite; animation-delay: 0.68s;">
+      <text x="94" y="16" fill="#38bdf8" opacity="0.25">1</text>
+      <text x="94" y="31" fill="#67e8f9" opacity="0.62">0</text>
+      <text x="94" y="46" fill="#38bdf8" opacity="0.28">0</text>
+      <text x="94" y="61" fill="#38bdf8" opacity="0.28">0</text>
+      <text x="94" y="76" fill="#38bdf8" opacity="0.32">0</text>
+      <text x="94" y="91" fill="#38bdf8" opacity="0.33">1</text>
+      <text x="94" y="106" fill="#38bdf8" opacity="0.27">0</text>
+      <text x="94" y="121" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="94" y="136" fill="#38bdf8" opacity="0.23">0</text>
+      <text x="94" y="151" fill="#38bdf8" opacity="0.25">0</text>
     </g>
-    <g style="animation: bitPulse 2.50s ease-in-out infinite; animation-delay: 0.85s;">
-      <text x="114" y="16" fill="#67e8f9" opacity="0.73">0</text>
-      <text x="114" y="31" fill="#38bdf8" opacity="0.26">0</text>
-      <text x="114" y="46" fill="#67e8f9" opacity="0.61">1</text>
-      <text x="114" y="61" fill="#38bdf8" opacity="0.12">1</text>
-      <text x="114" y="76" fill="#38bdf8" opacity="0.19">1</text>
-      <text x="114" y="91" fill="#38bdf8" opacity="0.12">1</text>
-      <text x="114" y="106" fill="#38bdf8" opacity="0.17">1</text>
-      <text x="114" y="121" fill="#38bdf8" opacity="0.28">0</text>
-      <text x="114" y="136" fill="#67e8f9" opacity="0.73">0</text>
-      <text x="114" y="151" fill="#38bdf8" opacity="0.13">0</text>
+    <g style="animation: bitPulseSubtle 2.90s ease-in-out infinite; animation-delay: 0.85s;">
+      <text x="114" y="16" fill="#67e8f9" opacity="0.66">0</text>
+      <text x="114" y="31" fill="#38bdf8" opacity="0.33">0</text>
+      <text x="114" y="46" fill="#67e8f9" opacity="0.59">1</text>
+      <text x="114" y="61" fill="#38bdf8" opacity="0.24">1</text>
+      <text x="114" y="76" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="114" y="91" fill="#38bdf8" opacity="0.23">1</text>
+      <text x="114" y="106" fill="#38bdf8" opacity="0.27">1</text>
+      <text x="114" y="121" fill="#38bdf8" opacity="0.34">0</text>
+      <text x="114" y="136" fill="#67e8f9" opacity="0.66">0</text>
+      <text x="114" y="151" fill="#38bdf8" opacity="0.24">0</text>
     </g>
-    <g style="animation: bitPulse 3.00s ease-in-out infinite; animation-delay: 1.02s;">
-      <text x="134" y="16" fill="#38bdf8" opacity="0.13">1</text>
-      <text x="134" y="31" fill="#38bdf8" opacity="0.27">1</text>
-      <text x="134" y="46" fill="#38bdf8" opacity="0.25">1</text>
-      <text x="134" y="61" fill="#67e8f9" opacity="0.80">0</text>
-      <text x="134" y="76" fill="#38bdf8" opacity="0.27">0</text>
-      <text x="134" y="91" fill="#38bdf8" opacity="0.19">0</text>
-      <text x="134" y="106" fill="#38bdf8" opacity="0.26">0</text>
-      <text x="134" y="121" fill="#38bdf8" opacity="0.28">0</text>
-      <text x="134" y="136" fill="#38bdf8" opacity="0.24">1</text>
-      <text x="134" y="151" fill="#38bdf8" opacity="0.27">1</text>
+    <g style="animation: bitPulseSubtle 3.40s ease-in-out infinite; animation-delay: 1.02s;">
+      <text x="134" y="16" fill="#38bdf8" opacity="0.24">1</text>
+      <text x="134" y="31" fill="#38bdf8" opacity="0.33">1</text>
+      <text x="134" y="46" fill="#38bdf8" opacity="0.32">1</text>
+      <text x="134" y="61" fill="#67e8f9" opacity="0.70">0</text>
+      <text x="134" y="76" fill="#38bdf8" opacity="0.33">0</text>
+      <text x="134" y="91" fill="#38bdf8" opacity="0.28">0</text>
+      <text x="134" y="106" fill="#38bdf8" opacity="0.33">0</text>
+      <text x="134" y="121" fill="#38bdf8" opacity="0.34">0</text>
+      <text x="134" y="136" fill="#38bdf8" opacity="0.31">1</text>
+      <text x="134" y="151" fill="#38bdf8" opacity="0.33">1</text>
     </g>
-    <g style="animation: bitPulse 3.50s ease-in-out infinite; animation-delay: 1.19s;">
-      <text x="154" y="16" fill="#38bdf8" opacity="0.15">1</text>
-      <text x="154" y="31" fill="#38bdf8" opacity="0.20">0</text>
-      <text x="154" y="46" fill="#67e8f9" opacity="0.70">1</text>
-      <text x="154" y="61" fill="#0284c7" opacity="0.05">0</text>
-      <text x="154" y="76" fill="#0284c7" opacity="0.08">0</text>
-      <text x="154" y="91" fill="#0284c7" opacity="0.07">0</text>
-      <text x="154" y="106" fill="#0284c7" opacity="0.07">0</text>
-      <text x="154" y="121" fill="#38bdf8" opacity="0.11">0</text>
-      <text x="154" y="136" fill="#38bdf8" opacity="0.21">0</text>
-      <text x="154" y="151" fill="#38bdf8" opacity="0.14">1</text>
+    <g style="animation: bitPulseSubtle 3.90s ease-in-out infinite; animation-delay: 1.19s;">
+      <text x="154" y="16" fill="#38bdf8" opacity="0.26">1</text>
+      <text x="154" y="31" fill="#38bdf8" opacity="0.29">0</text>
+      <text x="154" y="46" fill="#67e8f9" opacity="0.64">1</text>
+      <text x="154" y="61" fill="#0284c7" opacity="0.08">0</text>
+      <text x="154" y="76" fill="#0284c7" opacity="0.11">0</text>
+      <text x="154" y="91" fill="#0284c7" opacity="0.10">0</text>
+      <text x="154" y="106" fill="#0284c7" opacity="0.10">0</text>
+      <text x="154" y="121" fill="#38bdf8" opacity="0.22">0</text>
+      <text x="154" y="136" fill="#38bdf8" opacity="0.29">0</text>
+      <text x="154" y="151" fill="#38bdf8" opacity="0.24">1</text>
     </g>
-    <g style="animation: bitPulse 2.00s ease-in-out infinite; animation-delay: 1.36s;">
-      <text x="174" y="16" fill="#38bdf8" opacity="0.17">1</text>
-      <text x="174" y="31" fill="#38bdf8" opacity="0.27">1</text>
-      <text x="174" y="46" fill="#67e8f9" opacity="0.71">0</text>
-      <text x="174" y="61" fill="#0284c7" opacity="0.05">0</text>
-      <text x="174" y="76" fill="#0284c7" opacity="0.07">0</text>
-      <text x="174" y="91" fill="#0284c7" opacity="0.09">0</text>
-      <text x="174" y="106" fill="#0284c7" opacity="0.09">0</text>
-      <text x="174" y="121" fill="#38bdf8" opacity="0.18">1</text>
-      <text x="174" y="136" fill="#38bdf8" opacity="0.28">1</text>
-      <text x="174" y="151" fill="#38bdf8" opacity="0.20">0</text>
+    <g style="animation: bitPulseSubtle 2.40s ease-in-out infinite; animation-delay: 1.36s;">
+      <text x="174" y="16" fill="#38bdf8" opacity="0.27">1</text>
+      <text x="174" y="31" fill="#38bdf8" opacity="0.33">1</text>
+      <text x="174" y="46" fill="#67e8f9" opacity="0.64">0</text>
+      <text x="174" y="61" fill="#0284c7" opacity="0.08">0</text>
+      <text x="174" y="76" fill="#0284c7" opacity="0.10">0</text>
+      <text x="174" y="91" fill="#0284c7" opacity="0.12">0</text>
+      <text x="174" y="106" fill="#0284c7" opacity="0.12">0</text>
+      <text x="174" y="121" fill="#38bdf8" opacity="0.27">1</text>
+      <text x="174" y="136" fill="#38bdf8" opacity="0.34">1</text>
+      <text x="174" y="151" fill="#38bdf8" opacity="0.29">0</text>
     </g>
-    <g style="animation: bitPulse 2.50s ease-in-out infinite; animation-delay: 1.53s;">
-      <text x="194" y="16" fill="#38bdf8" opacity="0.12">0</text>
-      <text x="194" y="31" fill="#38bdf8" opacity="0.23">0</text>
-      <text x="194" y="46" fill="#38bdf8" opacity="0.21">0</text>
-      <text x="194" y="61" fill="#0284c7" opacity="0.06">1</text>
-      <text x="194" y="76" fill="#0284c7" opacity="0.07">1</text>
-      <text x="194" y="91" fill="#0284c7" opacity="0.09">1</text>
-      <text x="194" y="106" fill="#0284c7" opacity="0.05">0</text>
-      <text x="194" y="121" fill="#38bdf8" opacity="0.11">1</text>
-      <text x="194" y="136" fill="#38bdf8" opacity="0.21">1</text>
-      <text x="194" y="151" fill="#38bdf8" opacity="0.18">1</text>
+    <g style="animation: bitPulseSubtle 2.90s ease-in-out infinite; animation-delay: 1.53s;">
+      <text x="194" y="16" fill="#38bdf8" opacity="0.24">0</text>
+      <text x="194" y="31" fill="#38bdf8" opacity="0.31">0</text>
+      <text x="194" y="46" fill="#38bdf8" opacity="0.29">0</text>
+      <text x="194" y="61" fill="#0284c7" opacity="0.09">1</text>
+      <text x="194" y="76" fill="#0284c7" opacity="0.10">1</text>
+      <text x="194" y="91" fill="#0284c7" opacity="0.12">1</text>
+      <text x="194" y="106" fill="#0284c7" opacity="0.08">0</text>
+      <text x="194" y="121" fill="#38bdf8" opacity="0.23">1</text>
+      <text x="194" y="136" fill="#38bdf8" opacity="0.30">1</text>
+      <text x="194" y="151" fill="#38bdf8" opacity="0.27">1</text>
     </g>
-    <g style="animation: bitPulse 3.00s ease-in-out infinite; animation-delay: 1.70s;">
-      <text x="214" y="16" fill="#38bdf8" opacity="0.12">1</text>
-      <text x="214" y="31" fill="#38bdf8" opacity="0.25">0</text>
-      <text x="214" y="46" fill="#38bdf8" opacity="0.11">0</text>
-      <text x="214" y="61" fill="#0284c7" opacity="0.09">1</text>
-      <text x="214" y="76" fill="#0284c7" opacity="0.09">0</text>
-      <text x="214" y="91" fill="#0284c7" opacity="0.08">0</text>
-      <text x="214" y="106" fill="#0284c7" opacity="0.06">0</text>
-      <text x="214" y="121" fill="#38bdf8" opacity="0.23">1</text>
-      <text x="214" y="136" fill="#38bdf8" opacity="0.28">0</text>
-      <text x="214" y="151" fill="#38bdf8" opacity="0.10">0</text>
+    <g style="animation: bitPulseSubtle 3.40s ease-in-out infinite; animation-delay: 1.70s;">
+      <text x="214" y="16" fill="#38bdf8" opacity="0.23">1</text>
+      <text x="214" y="31" fill="#38bdf8" opacity="0.32">0</text>
+      <text x="214" y="46" fill="#38bdf8" opacity="0.23">0</text>
+      <text x="214" y="61" fill="#0284c7" opacity="0.12">1</text>
+      <text x="214" y="76" fill="#0284c7" opacity="0.12">0</text>
+      <text x="214" y="91" fill="#0284c7" opacity="0.11">0</text>
+      <text x="214" y="106" fill="#0284c7" opacity="0.09">0</text>
+      <text x="214" y="121" fill="#38bdf8" opacity="0.31">1</text>
+      <text x="214" y="136" fill="#38bdf8" opacity="0.34">0</text>
+      <text x="214" y="151" fill="#38bdf8" opacity="0.22">0</text>
     </g>
-    <g style="animation: bitPulse 3.50s ease-in-out infinite; animation-delay: 1.87s;">
-      <text x="234" y="16" fill="#38bdf8" opacity="0.17">1</text>
-      <text x="234" y="31" fill="#38bdf8" opacity="0.24">0</text>
-      <text x="234" y="46" fill="#38bdf8" opacity="0.11">0</text>
-      <text x="234" y="61" fill="#0284c7" opacity="0.06">1</text>
-      <text x="234" y="76" fill="#0284c7" opacity="0.06">1</text>
-      <text x="234" y="91" fill="#0284c7" opacity="0.06">0</text>
-      <text x="234" y="106" fill="#0284c7" opacity="0.07">0</text>
-      <text x="234" y="121" fill="#38bdf8" opacity="0.27">1</text>
-      <text x="234" y="136" fill="#38bdf8" opacity="0.19">1</text>
-      <text x="234" y="151" fill="#38bdf8" opacity="0.12">1</text>
+    <g style="animation: bitPulseSubtle 3.90s ease-in-out infinite; animation-delay: 1.87s;">
+      <text x="234" y="16" fill="#38bdf8" opacity="0.27">1</text>
+      <text x="234" y="31" fill="#38bdf8" opacity="0.31">0</text>
+      <text x="234" y="46" fill="#38bdf8" opacity="0.22">0</text>
+      <text x="234" y="61" fill="#0284c7" opacity="0.09">1</text>
+      <text x="234" y="76" fill="#0284c7" opacity="0.09">1</text>
+      <text x="234" y="91" fill="#0284c7" opacity="0.09">0</text>
+      <text x="234" y="106" fill="#0284c7" opacity="0.10">0</text>
+      <text x="234" y="121" fill="#38bdf8" opacity="0.34">1</text>
+      <text x="234" y="136" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="234" y="151" fill="#38bdf8" opacity="0.23">1</text>
     </g>
-    <g style="animation: bitPulse 2.00s ease-in-out infinite; animation-delay: 2.04s;">
-      <text x="254" y="16" fill="#38bdf8" opacity="0.27">1</text>
-      <text x="254" y="31" fill="#67e8f9" opacity="0.70">1</text>
-      <text x="254" y="46" fill="#38bdf8" opacity="0.16">1</text>
-      <text x="254" y="61" fill="#0284c7" opacity="0.07">0</text>
-      <text x="254" y="76" fill="#0284c7" opacity="0.06">0</text>
-      <text x="254" y="91" fill="#0284c7" opacity="0.05">1</text>
-      <text x="254" y="106" fill="#0284c7" opacity="0.06">0</text>
-      <text x="254" y="121" fill="#38bdf8" opacity="0.27">0</text>
-      <text x="254" y="136" fill="#38bdf8" opacity="0.12">1</text>
-      <text x="254" y="151" fill="#38bdf8" opacity="0.22">1</text>
+    <g style="animation: bitPulseSubtle 2.40s ease-in-out infinite; animation-delay: 2.04s;">
+      <text x="254" y="16" fill="#38bdf8" opacity="0.34">1</text>
+      <text x="254" y="31" fill="#67e8f9" opacity="0.64">1</text>
+      <text x="254" y="46" fill="#38bdf8" opacity="0.26">1</text>
+      <text x="254" y="61" fill="#0284c7" opacity="0.10">0</text>
+      <text x="254" y="76" fill="#0284c7" opacity="0.09">0</text>
+      <text x="254" y="91" fill="#0284c7" opacity="0.08">1</text>
+      <text x="254" y="106" fill="#0284c7" opacity="0.09">0</text>
+      <text x="254" y="121" fill="#38bdf8" opacity="0.33">0</text>
+      <text x="254" y="136" fill="#38bdf8" opacity="0.23">1</text>
+      <text x="254" y="151" fill="#38bdf8" opacity="0.30">1</text>
     </g>
-    <g style="animation: bitPulse 2.50s ease-in-out infinite; animation-delay: 2.21s;">
-      <text x="274" y="16" fill="#38bdf8" opacity="0.15">1</text>
-      <text x="274" y="31" fill="#38bdf8" opacity="0.22">0</text>
-      <text x="274" y="46" fill="#38bdf8" opacity="0.26">1</text>
-      <text x="274" y="61" fill="#0284c7" opacity="0.07">1</text>
-      <text x="274" y="76" fill="#0284c7" opacity="0.06">0</text>
-      <text x="274" y="91" fill="#0284c7" opacity="0.07">0</text>
-      <text x="274" y="106" fill="#0284c7" opacity="0.07">1</text>
-      <text x="274" y="121" fill="#38bdf8" opacity="0.19">1</text>
-      <text x="274" y="136" fill="#38bdf8" opacity="0.15">0</text>
-      <text x="274" y="151" fill="#67e8f9" opacity="0.79">1</text>
+    <g style="animation: bitPulseSubtle 2.90s ease-in-out infinite; animation-delay: 2.21s;">
+      <text x="274" y="16" fill="#38bdf8" opacity="0.26">1</text>
+      <text x="274" y="31" fill="#38bdf8" opacity="0.30">0</text>
+      <text x="274" y="46" fill="#38bdf8" opacity="0.33">1</text>
+      <text x="274" y="61" fill="#0284c7" opacity="0.10">1</text>
+      <text x="274" y="76" fill="#0284c7" opacity="0.09">0</text>
+      <text x="274" y="91" fill="#0284c7" opacity="0.10">0</text>
+      <text x="274" y="106" fill="#0284c7" opacity="0.10">1</text>
+      <text x="274" y="121" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="274" y="136" fill="#38bdf8" opacity="0.25">0</text>
+      <text x="274" y="151" fill="#67e8f9" opacity="0.69">1</text>
     </g>
-    <g style="animation: bitPulse 3.00s ease-in-out infinite; animation-delay: 2.38s;">
-      <text x="294" y="16" fill="#38bdf8" opacity="0.14">0</text>
-      <text x="294" y="31" fill="#38bdf8" opacity="0.11">0</text>
-      <text x="294" y="46" fill="#38bdf8" opacity="0.24">1</text>
-      <text x="294" y="61" fill="#0284c7" opacity="0.07">1</text>
-      <text x="294" y="76" fill="#0284c7" opacity="0.08">0</text>
-      <text x="294" y="91" fill="#0284c7" opacity="0.07">1</text>
-      <text x="294" y="106" fill="#0284c7" opacity="0.06">0</text>
-      <text x="294" y="121" fill="#38bdf8" opacity="0.25">0</text>
-      <text x="294" y="136" fill="#38bdf8" opacity="0.14">0</text>
-      <text x="294" y="151" fill="#67e8f9" opacity="0.61">1</text>
+    <g style="animation: bitPulseSubtle 3.40s ease-in-out infinite; animation-delay: 2.38s;">
+      <text x="294" y="16" fill="#38bdf8" opacity="0.25">0</text>
+      <text x="294" y="31" fill="#38bdf8" opacity="0.23">0</text>
+      <text x="294" y="46" fill="#38bdf8" opacity="0.31">1</text>
+      <text x="294" y="61" fill="#0284c7" opacity="0.10">1</text>
+      <text x="294" y="76" fill="#0284c7" opacity="0.11">0</text>
+      <text x="294" y="91" fill="#0284c7" opacity="0.10">1</text>
+      <text x="294" y="106" fill="#0284c7" opacity="0.09">0</text>
+      <text x="294" y="121" fill="#38bdf8" opacity="0.32">0</text>
+      <text x="294" y="136" fill="#38bdf8" opacity="0.25">0</text>
+      <text x="294" y="151" fill="#67e8f9" opacity="0.59">1</text>
     </g>
-    <g style="animation: bitPulse 3.50s ease-in-out infinite; animation-delay: 0.05s;">
-      <text x="314" y="16" fill="#38bdf8" opacity="0.24">0</text>
-      <text x="314" y="31" fill="#38bdf8" opacity="0.26">1</text>
-      <text x="314" y="46" fill="#38bdf8" opacity="0.20">1</text>
-      <text x="314" y="61" fill="#0284c7" opacity="0.08">0</text>
-      <text x="314" y="76" fill="#0284c7" opacity="0.07">1</text>
-      <text x="314" y="91" fill="#0284c7" opacity="0.08">0</text>
-      <text x="314" y="106" fill="#0284c7" opacity="0.08">1</text>
-      <text x="314" y="121" fill="#38bdf8" opacity="0.15">1</text>
-      <text x="314" y="136" fill="#38bdf8" opacity="0.14">0</text>
-      <text x="314" y="151" fill="#38bdf8" opacity="0.20">1</text>
+    <g style="animation: bitPulseSubtle 3.90s ease-in-out infinite; animation-delay: 0.05s;">
+      <text x="314" y="16" fill="#38bdf8" opacity="0.32">0</text>
+      <text x="314" y="31" fill="#38bdf8" opacity="0.33">1</text>
+      <text x="314" y="46" fill="#38bdf8" opacity="0.29">1</text>
+      <text x="314" y="61" fill="#0284c7" opacity="0.11">0</text>
+      <text x="314" y="76" fill="#0284c7" opacity="0.10">1</text>
+      <text x="314" y="91" fill="#0284c7" opacity="0.11">0</text>
+      <text x="314" y="106" fill="#0284c7" opacity="0.11">1</text>
+      <text x="314" y="121" fill="#38bdf8" opacity="0.25">1</text>
+      <text x="314" y="136" fill="#38bdf8" opacity="0.25">0</text>
+      <text x="314" y="151" fill="#38bdf8" opacity="0.28">1</text>
     </g>
-    <g style="animation: bitPulse 2.00s ease-in-out infinite; animation-delay: 0.22s;">
-      <text x="334" y="16" fill="#38bdf8" opacity="0.17">0</text>
-      <text x="334" y="31" fill="#38bdf8" opacity="0.11">0</text>
-      <text x="334" y="46" fill="#38bdf8" opacity="0.18">1</text>
-      <text x="334" y="61" fill="#0284c7" opacity="0.06">0</text>
-      <text x="334" y="76" fill="#0284c7" opacity="0.07">1</text>
-      <text x="334" y="91" fill="#0284c7" opacity="0.08">0</text>
-      <text x="334" y="106" fill="#0284c7" opacity="0.07">1</text>
-      <text x="334" y="121" fill="#38bdf8" opacity="0.17">1</text>
-      <text x="334" y="136" fill="#38bdf8" opacity="0.23">1</text>
-      <text x="334" y="151" fill="#38bdf8" opacity="0.15">0</text>
+    <g style="animation: bitPulseSubtle 2.40s ease-in-out infinite; animation-delay: 0.22s;">
+      <text x="334" y="16" fill="#38bdf8" opacity="0.27">0</text>
+      <text x="334" y="31" fill="#38bdf8" opacity="0.23">0</text>
+      <text x="334" y="46" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="334" y="61" fill="#0284c7" opacity="0.09">0</text>
+      <text x="334" y="76" fill="#0284c7" opacity="0.10">1</text>
+      <text x="334" y="91" fill="#0284c7" opacity="0.11">0</text>
+      <text x="334" y="106" fill="#0284c7" opacity="0.10">1</text>
+      <text x="334" y="121" fill="#38bdf8" opacity="0.27">1</text>
+      <text x="334" y="136" fill="#38bdf8" opacity="0.31">1</text>
+      <text x="334" y="151" fill="#38bdf8" opacity="0.25">0</text>
     </g>
-    <g style="animation: bitPulse 2.50s ease-in-out infinite; animation-delay: 0.39s;">
-      <text x="354" y="16" fill="#67e8f9" opacity="0.63">1</text>
-      <text x="354" y="31" fill="#38bdf8" opacity="0.25">1</text>
-      <text x="354" y="46" fill="#38bdf8" opacity="0.20">0</text>
-      <text x="354" y="61" fill="#0284c7" opacity="0.07">1</text>
-      <text x="354" y="76" fill="#0284c7" opacity="0.05">0</text>
-      <text x="354" y="91" fill="#0284c7" opacity="0.06">1</text>
-      <text x="354" y="106" fill="#0284c7" opacity="0.06">1</text>
-      <text x="354" y="121" fill="#38bdf8" opacity="0.14">1</text>
-      <text x="354" y="136" fill="#38bdf8" opacity="0.26">1</text>
-      <text x="354" y="151" fill="#38bdf8" opacity="0.25">1</text>
+    <g style="animation: bitPulseSubtle 2.90s ease-in-out infinite; animation-delay: 0.39s;">
+      <text x="354" y="16" fill="#67e8f9" opacity="0.60">1</text>
+      <text x="354" y="31" fill="#38bdf8" opacity="0.32">1</text>
+      <text x="354" y="46" fill="#38bdf8" opacity="0.28">0</text>
+      <text x="354" y="61" fill="#0284c7" opacity="0.10">1</text>
+      <text x="354" y="76" fill="#0284c7" opacity="0.08">0</text>
+      <text x="354" y="91" fill="#0284c7" opacity="0.09">1</text>
+      <text x="354" y="106" fill="#0284c7" opacity="0.09">1</text>
+      <text x="354" y="121" fill="#38bdf8" opacity="0.25">1</text>
+      <text x="354" y="136" fill="#38bdf8" opacity="0.33">1</text>
+      <text x="354" y="151" fill="#38bdf8" opacity="0.32">1</text>
     </g>
-    <g style="animation: bitPulse 3.00s ease-in-out infinite; animation-delay: 0.56s;">
-      <text x="374" y="16" fill="#38bdf8" opacity="0.18">1</text>
-      <text x="374" y="31" fill="#38bdf8" opacity="0.16">0</text>
-      <text x="374" y="46" fill="#38bdf8" opacity="0.22">0</text>
-      <text x="374" y="61" fill="#0284c7" opacity="0.09">0</text>
-      <text x="374" y="76" fill="#0284c7" opacity="0.08">0</text>
-      <text x="374" y="91" fill="#0284c7" opacity="0.06">0</text>
-      <text x="374" y="106" fill="#0284c7" opacity="0.08">1</text>
-      <text x="374" y="121" fill="#38bdf8" opacity="0.15">0</text>
-      <text x="374" y="136" fill="#38bdf8" opacity="0.21">1</text>
-      <text x="374" y="151" fill="#38bdf8" opacity="0.13">0</text>
+    <g style="animation: bitPulseSubtle 3.40s ease-in-out infinite; animation-delay: 0.56s;">
+      <text x="374" y="16" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="374" y="31" fill="#38bdf8" opacity="0.26">0</text>
+      <text x="374" y="46" fill="#38bdf8" opacity="0.30">0</text>
+      <text x="374" y="61" fill="#0284c7" opacity="0.12">0</text>
+      <text x="374" y="76" fill="#0284c7" opacity="0.11">0</text>
+      <text x="374" y="91" fill="#0284c7" opacity="0.09">0</text>
+      <text x="374" y="106" fill="#0284c7" opacity="0.11">1</text>
+      <text x="374" y="121" fill="#38bdf8" opacity="0.25">0</text>
+      <text x="374" y="136" fill="#38bdf8" opacity="0.29">1</text>
+      <text x="374" y="151" fill="#38bdf8" opacity="0.24">0</text>
     </g>
-    <g style="animation: bitPulse 3.50s ease-in-out infinite; animation-delay: 0.73s;">
-      <text x="394" y="16" fill="#67e8f9" opacity="0.56">1</text>
-      <text x="394" y="31" fill="#38bdf8" opacity="0.26">1</text>
-      <text x="394" y="46" fill="#38bdf8" opacity="0.23">1</text>
-      <text x="394" y="61" fill="#0284c7" opacity="0.07">0</text>
-      <text x="394" y="76" fill="#0284c7" opacity="0.05">0</text>
-      <text x="394" y="91" fill="#0284c7" opacity="0.08">1</text>
-      <text x="394" y="106" fill="#0284c7" opacity="0.08">0</text>
-      <text x="394" y="121" fill="#38bdf8" opacity="0.18">0</text>
-      <text x="394" y="136" fill="#67e8f9" opacity="0.71">1</text>
-      <text x="394" y="151" fill="#38bdf8" opacity="0.25">0</text>
+    <g style="animation: bitPulseSubtle 3.90s ease-in-out infinite; animation-delay: 0.73s;">
+      <text x="394" y="16" fill="#67e8f9" opacity="0.55">1</text>
+      <text x="394" y="31" fill="#38bdf8" opacity="0.33">1</text>
+      <text x="394" y="46" fill="#38bdf8" opacity="0.31">1</text>
+      <text x="394" y="61" fill="#0284c7" opacity="0.10">0</text>
+      <text x="394" y="76" fill="#0284c7" opacity="0.08">0</text>
+      <text x="394" y="91" fill="#0284c7" opacity="0.11">1</text>
+      <text x="394" y="106" fill="#0284c7" opacity="0.11">0</text>
+      <text x="394" y="121" fill="#38bdf8" opacity="0.27">0</text>
+      <text x="394" y="136" fill="#67e8f9" opacity="0.65">1</text>
+      <text x="394" y="151" fill="#38bdf8" opacity="0.32">0</text>
     </g>
-    <g style="animation: bitPulse 2.00s ease-in-out infinite; animation-delay: 0.90s;">
-      <text x="414" y="16" fill="#38bdf8" opacity="0.17">0</text>
-      <text x="414" y="31" fill="#38bdf8" opacity="0.18">1</text>
-      <text x="414" y="46" fill="#38bdf8" opacity="0.27">1</text>
-      <text x="414" y="61" fill="#0284c7" opacity="0.07">1</text>
-      <text x="414" y="76" fill="#0284c7" opacity="0.06">1</text>
-      <text x="414" y="91" fill="#0284c7" opacity="0.08">0</text>
-      <text x="414" y="106" fill="#0284c7" opacity="0.06">0</text>
-      <text x="414" y="121" fill="#38bdf8" opacity="0.18">1</text>
-      <text x="414" y="136" fill="#38bdf8" opacity="0.19">1</text>
-      <text x="414" y="151" fill="#38bdf8" opacity="0.14">1</text>
+    <g style="animation: bitPulseSubtle 2.40s ease-in-out infinite; animation-delay: 0.90s;">
+      <text x="414" y="16" fill="#38bdf8" opacity="0.26">0</text>
+      <text x="414" y="31" fill="#38bdf8" opacity="0.27">1</text>
+      <text x="414" y="46" fill="#38bdf8" opacity="0.33">1</text>
+      <text x="414" y="61" fill="#0284c7" opacity="0.10">1</text>
+      <text x="414" y="76" fill="#0284c7" opacity="0.09">1</text>
+      <text x="414" y="91" fill="#0284c7" opacity="0.11">0</text>
+      <text x="414" y="106" fill="#0284c7" opacity="0.09">0</text>
+      <text x="414" y="121" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="414" y="136" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="414" y="151" fill="#38bdf8" opacity="0.25">1</text>
     </g>
-    <g style="animation: bitPulse 2.50s ease-in-out infinite; animation-delay: 1.07s;">
-      <text x="434" y="16" fill="#38bdf8" opacity="0.26">1</text>
-      <text x="434" y="31" fill="#38bdf8" opacity="0.19">1</text>
-      <text x="434" y="46" fill="#67e8f9" opacity="0.73">0</text>
-      <text x="434" y="61" fill="#0284c7" opacity="0.07">1</text>
-      <text x="434" y="76" fill="#0284c7" opacity="0.08">0</text>
-      <text x="434" y="91" fill="#0284c7" opacity="0.07">1</text>
-      <text x="434" y="106" fill="#0284c7" opacity="0.05">0</text>
-      <text x="434" y="121" fill="#38bdf8" opacity="0.14">0</text>
-      <text x="434" y="136" fill="#38bdf8" opacity="0.20">1</text>
-      <text x="434" y="151" fill="#38bdf8" opacity="0.20">1</text>
+    <g style="animation: bitPulseSubtle 2.90s ease-in-out infinite; animation-delay: 1.07s;">
+      <text x="434" y="16" fill="#38bdf8" opacity="0.33">1</text>
+      <text x="434" y="31" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="434" y="46" fill="#67e8f9" opacity="0.66">0</text>
+      <text x="434" y="61" fill="#0284c7" opacity="0.10">1</text>
+      <text x="434" y="76" fill="#0284c7" opacity="0.11">0</text>
+      <text x="434" y="91" fill="#0284c7" opacity="0.10">1</text>
+      <text x="434" y="106" fill="#0284c7" opacity="0.08">0</text>
+      <text x="434" y="121" fill="#38bdf8" opacity="0.25">0</text>
+      <text x="434" y="136" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="434" y="151" fill="#38bdf8" opacity="0.29">1</text>
     </g>
-    <g style="animation: bitPulse 3.00s ease-in-out infinite; animation-delay: 1.24s;">
-      <text x="454" y="16" fill="#38bdf8" opacity="0.15">1</text>
-      <text x="454" y="31" fill="#38bdf8" opacity="0.23">1</text>
-      <text x="454" y="46" fill="#67e8f9" opacity="0.68">1</text>
-      <text x="454" y="61" fill="#38bdf8" opacity="0.23">0</text>
-      <text x="454" y="76" fill="#38bdf8" opacity="0.28">1</text>
-      <text x="454" y="91" fill="#38bdf8" opacity="0.25">1</text>
-      <text x="454" y="106" fill="#38bdf8" opacity="0.13">1</text>
-      <text x="454" y="121" fill="#38bdf8" opacity="0.12">0</text>
-      <text x="454" y="136" fill="#38bdf8" opacity="0.20">0</text>
-      <text x="454" y="151" fill="#38bdf8" opacity="0.24">0</text>
+    <g style="animation: bitPulseSubtle 3.40s ease-in-out infinite; animation-delay: 1.24s;">
+      <text x="454" y="16" fill="#38bdf8" opacity="0.25">1</text>
+      <text x="454" y="31" fill="#38bdf8" opacity="0.31">1</text>
+      <text x="454" y="46" fill="#67e8f9" opacity="0.63">1</text>
+      <text x="454" y="61" fill="#38bdf8" opacity="0.31">0</text>
+      <text x="454" y="76" fill="#38bdf8" opacity="0.34">1</text>
+      <text x="454" y="91" fill="#38bdf8" opacity="0.32">1</text>
+      <text x="454" y="106" fill="#38bdf8" opacity="0.24">1</text>
+      <text x="454" y="121" fill="#38bdf8" opacity="0.24">0</text>
+      <text x="454" y="136" fill="#38bdf8" opacity="0.29">0</text>
+      <text x="454" y="151" fill="#38bdf8" opacity="0.31">0</text>
     </g>
-    <g style="animation: bitPulse 3.50s ease-in-out infinite; animation-delay: 1.41s;">
-      <text x="474" y="16" fill="#38bdf8" opacity="0.20">0</text>
-      <text x="474" y="31" fill="#38bdf8" opacity="0.16">1</text>
-      <text x="474" y="46" fill="#38bdf8" opacity="0.26">0</text>
-      <text x="474" y="61" fill="#38bdf8" opacity="0.17">0</text>
-      <text x="474" y="76" fill="#38bdf8" opacity="0.22">0</text>
-      <text x="474" y="91" fill="#38bdf8" opacity="0.20">0</text>
-      <text x="474" y="106" fill="#67e8f9" opacity="0.61">1</text>
-      <text x="474" y="121" fill="#38bdf8" opacity="0.24">1</text>
-      <text x="474" y="136" fill="#38bdf8" opacity="0.17">0</text>
-      <text x="474" y="151" fill="#38bdf8" opacity="0.21">1</text>
+    <g style="animation: bitPulseSubtle 3.90s ease-in-out infinite; animation-delay: 1.41s;">
+      <text x="474" y="16" fill="#38bdf8" opacity="0.29">0</text>
+      <text x="474" y="31" fill="#38bdf8" opacity="0.26">1</text>
+      <text x="474" y="46" fill="#38bdf8" opacity="0.32">0</text>
+      <text x="474" y="61" fill="#38bdf8" opacity="0.27">0</text>
+      <text x="474" y="76" fill="#38bdf8" opacity="0.30">0</text>
+      <text x="474" y="91" fill="#38bdf8" opacity="0.29">0</text>
+      <text x="474" y="106" fill="#67e8f9" opacity="0.59">1</text>
+      <text x="474" y="121" fill="#38bdf8" opacity="0.31">1</text>
+      <text x="474" y="136" fill="#38bdf8" opacity="0.27">0</text>
+      <text x="474" y="151" fill="#38bdf8" opacity="0.29">1</text>
     </g>
-    <g style="animation: bitPulse 2.00s ease-in-out infinite; animation-delay: 1.58s;">
-      <text x="494" y="16" fill="#38bdf8" opacity="0.21">1</text>
-      <text x="494" y="31" fill="#38bdf8" opacity="0.14">0</text>
-      <text x="494" y="46" fill="#38bdf8" opacity="0.11">0</text>
-      <text x="494" y="61" fill="#38bdf8" opacity="0.11">0</text>
-      <text x="494" y="76" fill="#38bdf8" opacity="0.22">0</text>
-      <text x="494" y="91" fill="#38bdf8" opacity="0.14">1</text>
-      <text x="494" y="106" fill="#38bdf8" opacity="0.18">1</text>
-      <text x="494" y="121" fill="#38bdf8" opacity="0.24">0</text>
-      <text x="494" y="136" fill="#38bdf8" opacity="0.20">0</text>
-      <text x="494" y="151" fill="#38bdf8" opacity="0.25">0</text>
+    <g style="animation: bitPulseSubtle 2.40s ease-in-out infinite; animation-delay: 1.58s;">
+      <text x="494" y="16" fill="#38bdf8" opacity="0.29">1</text>
+      <text x="494" y="31" fill="#38bdf8" opacity="0.24">0</text>
+      <text x="494" y="46" fill="#38bdf8" opacity="0.23">0</text>
+      <text x="494" y="61" fill="#38bdf8" opacity="0.23">0</text>
+      <text x="494" y="76" fill="#38bdf8" opacity="0.30">0</text>
+      <text x="494" y="91" fill="#38bdf8" opacity="0.25">1</text>
+      <text x="494" y="106" fill="#38bdf8" opacity="0.27">1</text>
+      <text x="494" y="121" fill="#38bdf8" opacity="0.31">0</text>
+      <text x="494" y="136" fill="#38bdf8" opacity="0.29">0</text>
+      <text x="494" y="151" fill="#38bdf8" opacity="0.32">0</text>
     </g>
-    <g style="animation: bitPulse 2.50s ease-in-out infinite; animation-delay: 1.75s;">
-      <text x="514" y="16" fill="#67e8f9" opacity="0.75">0</text>
-      <text x="514" y="31" fill="#38bdf8" opacity="0.18">1</text>
-      <text x="514" y="46" fill="#38bdf8" opacity="0.27">1</text>
-      <text x="514" y="61" fill="#38bdf8" opacity="0.21">1</text>
-      <text x="514" y="76" fill="#38bdf8" opacity="0.21">1</text>
-      <text x="514" y="91" fill="#67e8f9" opacity="0.79">0</text>
-      <text x="514" y="106" fill="#38bdf8" opacity="0.22">0</text>
-      <text x="514" y="121" fill="#38bdf8" opacity="0.24">1</text>
-      <text x="514" y="136" fill="#38bdf8" opacity="0.22">0</text>
-      <text x="514" y="151" fill="#38bdf8" opacity="0.21">1</text>
+    <g style="animation: bitPulseSubtle 2.90s ease-in-out infinite; animation-delay: 1.75s;">
+      <text x="514" y="16" fill="#67e8f9" opacity="0.67">0</text>
+      <text x="514" y="31" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="514" y="46" fill="#38bdf8" opacity="0.33">1</text>
+      <text x="514" y="61" fill="#38bdf8" opacity="0.29">1</text>
+      <text x="514" y="76" fill="#38bdf8" opacity="0.29">1</text>
+      <text x="514" y="91" fill="#67e8f9" opacity="0.69">0</text>
+      <text x="514" y="106" fill="#38bdf8" opacity="0.30">0</text>
+      <text x="514" y="121" fill="#38bdf8" opacity="0.31">1</text>
+      <text x="514" y="136" fill="#38bdf8" opacity="0.30">0</text>
+      <text x="514" y="151" fill="#38bdf8" opacity="0.29">1</text>
     </g>
-    <g style="animation: bitPulse 3.00s ease-in-out infinite; animation-delay: 1.92s;">
-      <text x="534" y="16" fill="#38bdf8" opacity="0.18">1</text>
-      <text x="534" y="31" fill="#38bdf8" opacity="0.22">1</text>
-      <text x="534" y="46" fill="#38bdf8" opacity="0.22">0</text>
-      <text x="534" y="61" fill="#38bdf8" opacity="0.17">1</text>
-      <text x="534" y="76" fill="#38bdf8" opacity="0.16">0</text>
-      <text x="534" y="91" fill="#67e8f9" opacity="0.74">1</text>
-      <text x="534" y="106" fill="#38bdf8" opacity="0.20">0</text>
-      <text x="534" y="121" fill="#67e8f9" opacity="0.68">1</text>
-      <text x="534" y="136" fill="#38bdf8" opacity="0.24">1</text>
-      <text x="534" y="151" fill="#38bdf8" opacity="0.12">0</text>
+    <g style="animation: bitPulseSubtle 3.40s ease-in-out infinite; animation-delay: 1.92s;">
+      <text x="534" y="16" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="534" y="31" fill="#38bdf8" opacity="0.30">1</text>
+      <text x="534" y="46" fill="#38bdf8" opacity="0.30">0</text>
+      <text x="534" y="61" fill="#38bdf8" opacity="0.27">1</text>
+      <text x="534" y="76" fill="#38bdf8" opacity="0.26">0</text>
+      <text x="534" y="91" fill="#67e8f9" opacity="0.67">1</text>
+      <text x="534" y="106" fill="#38bdf8" opacity="0.29">0</text>
+      <text x="534" y="121" fill="#67e8f9" opacity="0.63">1</text>
+      <text x="534" y="136" fill="#38bdf8" opacity="0.31">1</text>
+      <text x="534" y="151" fill="#38bdf8" opacity="0.24">0</text>
     </g>
-    <g style="animation: bitPulse 3.50s ease-in-out infinite; animation-delay: 2.09s;">
-      <text x="554" y="16" fill="#38bdf8" opacity="0.23">1</text>
-      <text x="554" y="31" fill="#67e8f9" opacity="0.71">0</text>
-      <text x="554" y="46" fill="#38bdf8" opacity="0.16">0</text>
-      <text x="554" y="61" fill="#38bdf8" opacity="0.12">0</text>
-      <text x="554" y="76" fill="#38bdf8" opacity="0.12">0</text>
-      <text x="554" y="91" fill="#38bdf8" opacity="0.23">0</text>
-      <text x="554" y="106" fill="#38bdf8" opacity="0.19">1</text>
-      <text x="554" y="121" fill="#38bdf8" opacity="0.20">1</text>
-      <text x="554" y="136" fill="#38bdf8" opacity="0.21">1</text>
-      <text x="554" y="151" fill="#38bdf8" opacity="0.15">0</text>
+    <g style="animation: bitPulseSubtle 3.90s ease-in-out infinite; animation-delay: 2.09s;">
+      <text x="554" y="16" fill="#38bdf8" opacity="0.30">1</text>
+      <text x="554" y="31" fill="#67e8f9" opacity="0.64">0</text>
+      <text x="554" y="46" fill="#38bdf8" opacity="0.26">0</text>
+      <text x="554" y="61" fill="#38bdf8" opacity="0.23">0</text>
+      <text x="554" y="76" fill="#38bdf8" opacity="0.23">0</text>
+      <text x="554" y="91" fill="#38bdf8" opacity="0.31">0</text>
+      <text x="554" y="106" fill="#38bdf8" opacity="0.28">1</text>
+      <text x="554" y="121" fill="#38bdf8" opacity="0.29">1</text>
+      <text x="554" y="136" fill="#38bdf8" opacity="0.29">1</text>
+      <text x="554" y="151" fill="#38bdf8" opacity="0.25">0</text>
     </g>
-    <g style="animation: bitPulse 2.00s ease-in-out infinite; animation-delay: 2.26s;">
-      <text x="574" y="16" fill="#38bdf8" opacity="0.24">1</text>
-      <text x="574" y="31" fill="#38bdf8" opacity="0.15">1</text>
-      <text x="574" y="46" fill="#38bdf8" opacity="0.20">1</text>
-      <text x="574" y="61" fill="#38bdf8" opacity="0.18">1</text>
-      <text x="574" y="76" fill="#38bdf8" opacity="0.20">1</text>
-      <text x="574" y="91" fill="#38bdf8" opacity="0.16">1</text>
-      <text x="574" y="106" fill="#38bdf8" opacity="0.14">0</text>
-      <text x="574" y="121" fill="#38bdf8" opacity="0.24">1</text>
-      <text x="574" y="136" fill="#38bdf8" opacity="0.19">0</text>
-      <text x="574" y="151" fill="#38bdf8" opacity="0.22">1</text>
+    <g style="animation: bitPulseSubtle 2.40s ease-in-out infinite; animation-delay: 2.26s;">
+      <text x="574" y="16" fill="#38bdf8" opacity="0.31">1</text>
+      <text x="574" y="31" fill="#38bdf8" opacity="0.25">1</text>
+      <text x="574" y="46" fill="#38bdf8" opacity="0.29">1</text>
+      <text x="574" y="61" fill="#38bdf8" opacity="0.27">1</text>
+      <text x="574" y="76" fill="#38bdf8" opacity="0.29">1</text>
+      <text x="574" y="91" fill="#38bdf8" opacity="0.26">1</text>
+      <text x="574" y="106" fill="#38bdf8" opacity="0.25">0</text>
+      <text x="574" y="121" fill="#38bdf8" opacity="0.31">1</text>
+      <text x="574" y="136" fill="#38bdf8" opacity="0.28">0</text>
+      <text x="574" y="151" fill="#38bdf8" opacity="0.30">1</text>
     </g>
   </g>
 
-  <!-- Left Striped Chevron (Direct high-contrast colors) -->
+  <!-- Left Striped Chevron -->
   <g class="chevrons">
-    <line x1="75" y1="80.0" x2="75" y2="80.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="79" y1="76.0" x2="79" y2="84.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="83" y1="72.0" x2="83" y2="88.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="87" y1="68.0" x2="87" y2="92.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="91" y1="64.0" x2="91" y2="96.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="95" y1="60.0" x2="95" y2="79.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="95" y1="81.0" x2="95" y2="100.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="99" y1="56.0" x2="99" y2="75.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="99" y1="85.0" x2="99" y2="104.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="103" y1="52.0" x2="103" y2="71.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="103" y1="89.0" x2="103" y2="108.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="107" y1="48.0" x2="107" y2="67.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="107" y1="93.0" x2="107" y2="112.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="111" y1="44.0" x2="111" y2="63.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="111" y1="97.0" x2="111" y2="116.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="115" y1="40.0" x2="115" y2="59.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="115" y1="101.0" x2="115" y2="120.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="119" y1="36.0" x2="119" y2="55.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="119" y1="105.0" x2="119" y2="124.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="123" y1="34.0" x2="123" y2="51.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="123" y1="109.0" x2="123" y2="126.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="127" y1="34.0" x2="127" y2="47.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="127" y1="113.0" x2="127" y2="126.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="131" y1="34.0" x2="131" y2="43.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="131" y1="117.0" x2="131" y2="126.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="135" y1="34.0" x2="135" y2="39.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="135" y1="121.0" x2="135" y2="126.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="139" y1="34.0" x2="139" y2="35.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="139" y1="125.0" x2="139" y2="126.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
+    <line x1="75" y1="78.0" x2="75" y2="82.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="79" y1="76.0" x2="79" y2="84.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="83" y1="72.0" x2="83" y2="88.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="87" y1="68.0" x2="87" y2="92.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="91" y1="64.0" x2="91" y2="96.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="95" y1="60.0" x2="95" y2="79.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="95" y1="81.0" x2="95" y2="100.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="99" y1="56.0" x2="99" y2="75.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="99" y1="85.0" x2="99" y2="104.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="103" y1="52.0" x2="103" y2="71.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="103" y1="89.0" x2="103" y2="108.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="107" y1="48.0" x2="107" y2="67.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="107" y1="93.0" x2="107" y2="112.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="111" y1="44.0" x2="111" y2="63.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="111" y1="97.0" x2="111" y2="116.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="115" y1="40.0" x2="115" y2="59.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="115" y1="101.0" x2="115" y2="120.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="119" y1="36.0" x2="119" y2="55.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="119" y1="105.0" x2="119" y2="124.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="123" y1="34.0" x2="123" y2="51.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="123" y1="109.0" x2="123" y2="126.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="127" y1="34.0" x2="127" y2="47.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="127" y1="113.0" x2="127" y2="126.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="131" y1="34.0" x2="131" y2="43.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="131" y1="117.0" x2="131" y2="126.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="135" y1="34.0" x2="135" y2="39.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="135" y1="121.0" x2="135" y2="126.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="139" y1="34.0" x2="139" y2="35.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="139" y1="125.0" x2="139" y2="126.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
   </g>
 
-  <!-- Right Striped Chevron (Direct high-contrast colors) -->
+  <!-- Right Striped Chevron -->
   <g class="chevrons">
-    <line x1="525" y1="80.0" x2="525" y2="80.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="521" y1="76.0" x2="521" y2="84.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="517" y1="72.0" x2="517" y2="88.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="513" y1="68.0" x2="513" y2="92.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="509" y1="64.0" x2="509" y2="96.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="505" y1="60.0" x2="505" y2="79.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="505" y1="81.0" x2="505" y2="100.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="501" y1="56.0" x2="501" y2="75.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="501" y1="85.0" x2="501" y2="104.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="497" y1="52.0" x2="497" y2="71.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="497" y1="89.0" x2="497" y2="108.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="493" y1="48.0" x2="493" y2="67.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="493" y1="93.0" x2="493" y2="112.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="489" y1="44.0" x2="489" y2="63.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="489" y1="97.0" x2="489" y2="116.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="485" y1="40.0" x2="485" y2="59.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="485" y1="101.0" x2="485" y2="120.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="481" y1="36.0" x2="481" y2="55.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="481" y1="105.0" x2="481" y2="124.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="477" y1="34.0" x2="477" y2="51.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="477" y1="109.0" x2="477" y2="126.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="473" y1="34.0" x2="473" y2="47.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="473" y1="113.0" x2="473" y2="126.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="469" y1="34.0" x2="469" y2="43.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="469" y1="117.0" x2="469" y2="126.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="465" y1="34.0" x2="465" y2="39.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="465" y1="121.0" x2="465" y2="126.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="461" y1="34.0" x2="461" y2="35.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
-    <line x1="461" y1="125.0" x2="461" y2="126.0" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round" />
+    <line x1="525" y1="78.0" x2="525" y2="82.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="521" y1="76.0" x2="521" y2="84.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="517" y1="72.0" x2="517" y2="88.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="513" y1="68.0" x2="513" y2="92.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="509" y1="64.0" x2="509" y2="96.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="505" y1="60.0" x2="505" y2="79.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="505" y1="81.0" x2="505" y2="100.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="501" y1="56.0" x2="501" y2="75.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="501" y1="85.0" x2="501" y2="104.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="497" y1="52.0" x2="497" y2="71.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="497" y1="89.0" x2="497" y2="108.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="493" y1="48.0" x2="493" y2="67.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="493" y1="93.0" x2="493" y2="112.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="489" y1="44.0" x2="489" y2="63.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="489" y1="97.0" x2="489" y2="116.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="485" y1="40.0" x2="485" y2="59.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="485" y1="101.0" x2="485" y2="120.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="481" y1="36.0" x2="481" y2="55.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="481" y1="105.0" x2="481" y2="124.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="477" y1="34.0" x2="477" y2="51.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="477" y1="109.0" x2="477" y2="126.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="473" y1="34.0" x2="473" y2="47.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="473" y1="113.0" x2="473" y2="126.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="469" y1="34.0" x2="469" y2="43.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="469" y1="117.0" x2="469" y2="126.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="465" y1="34.0" x2="465" y2="39.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="465" y1="121.0" x2="465" y2="126.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="461" y1="34.0" x2="461" y2="35.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="461" y1="125.0" x2="461" y2="126.0" stroke="url(#chevGrad)" stroke-width="2.5" stroke-linecap="round" />
   </g>
 
   <!-- Center Content: Crisp Name & Status Badge -->
