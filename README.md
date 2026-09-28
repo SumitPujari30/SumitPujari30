@@ -100,12 +100,13 @@ I am a Full Stack Developer based in India with a strong interest in solving rea
 </div>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/profile-summary-card-output/tokyonight/0-profile-details.svg" alt="Profile Details" width="100%">
+  <img src="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/main/profile-summary-card-output/tokyonight/0-profile-details.svg" alt="Profile Details" width="100%">
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/profile-summary-card-output/tokyonight/1-repo-languages.svg" alt="Top Languages by Repo" width="49%">
-  <img src="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/profile-summary-card-output/tokyonight/2-commit-languages.svg" alt="Top Languages by Commit" width="49%">
+  <img src="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/main/profile-summary-card-output/tokyonight/1-repos-per-language.svg" alt="Top Languages by Repo" width="33%">
+  <img src="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/main/profile-summary-card-output/tokyonight/2-most-commit-language.svg" alt="Top Languages by Commit" width="33%">
+  <img src="https://raw.githubusercontent.com/SumitPujari30/SumitPujari30/main/profile-summary-card-output/tokyonight/3-stats.svg" alt="Stats" width="33%">
 </p>
 
 ---
