@@ -2,7 +2,7 @@
 <table align="center" width="100%"><tr>
 <td valign="middle" width="55%">
 
-<img src="./hero-banner.svg" width="100%" alt="Sumit Pujari - Forward Deployed Engineer" />
+<img src="./hero-banner.svg?v=3" width="100%" alt="Sumit Pujari - Forward Deployed Engineer" />
 
 <p>
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=16&pause=1200&color=38bdf8&vCenter=true&width=450&lines=Building+software+for+real-world+problems;Full-stack+systems+and+integrations;Deploying+practical%2C+scalable+solutions;Working+across+product+and+infrastructure" />
